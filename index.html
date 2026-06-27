@@ -552,6 +552,106 @@
 
     .mstep-text strong { color: var(--text); }
 
+    /* ── INCOME TYPES ── */
+    #income { background: white; }
+
+    .income-alert {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: #fef2f2; border: 1px solid #fca5a5;
+      border-left: 4px solid #dc2626;
+      border-radius: 10px; padding: 18px 22px;
+      margin: 2rem 0 3rem;
+    }
+
+    .income-alert strong { display: block; font-size: 0.95rem; color: #7f1d1d; margin-bottom: 0.35rem; }
+    .income-alert p { font-size: 0.875rem; color: #991b1b; line-height: 1.75; }
+
+    .income-example {
+      background: #fff7ed; border: 1px solid #fed7aa;
+      border-radius: 10px; padding: 18px 22px;
+      margin-bottom: 3rem;
+    }
+
+    .income-example h4 { font-size: 0.9rem; font-weight: 700; color: #78350f; margin-bottom: 0.75rem; }
+    .income-example .ex-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-bottom: 0.5rem;
+    }
+    .ex-box {
+      background: white; border-radius: 8px; padding: 12px 16px;
+      border: 1px solid var(--border);
+    }
+    .ex-box .ex-type { font-size: 0.78rem; font-weight: 700; color: var(--muted); letter-spacing: 0.04em; }
+    .ex-box .ex-rate { font-size: 1.1rem; font-weight: 700; margin: 4px 0 2px; }
+    .ex-box.green .ex-rate { color: #15803d; }
+    .ex-box.red .ex-rate { color: #dc2626; }
+    .ex-box .ex-note { font-size: 0.8rem; color: var(--muted); }
+    .income-example .ex-conclusion {
+      font-size: 0.84rem; color: #92400e; margin-top: 0.75rem; line-height: 1.65;
+    }
+
+    .income-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .income-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px;
+      position: relative; overflow: hidden;
+    }
+
+    .income-card.highlight {
+      background: #fffbeb; border-color: #fcd34d;
+    }
+
+    .income-card-header {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 0.75rem;
+    }
+
+    .income-type-badge {
+      background: var(--navy); color: white;
+      font-size: 0.78rem; font-weight: 700;
+      padding: 4px 10px; border-radius: 6px;
+      font-family: 'Inter', sans-serif; letter-spacing: 0.02em;
+    }
+
+    .income-card.highlight .income-type-badge { background: #d97706; }
+
+    .income-card-name { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+
+    .income-rate {
+      display: flex; align-items: baseline; gap: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .rate-num { font-size: 1.6rem; font-weight: 700; color: var(--blue); font-family: 'Inter', sans-serif; line-height: 1; }
+    .income-card.highlight .rate-num { color: #d97706; }
+    .rate-label { font-size: 0.8rem; color: var(--muted); }
+
+    .income-examples-list {
+      font-size: 0.82rem; color: var(--muted);
+      margin-bottom: 0.85rem; line-height: 1.6;
+    }
+
+    .income-docs { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+    .income-docs-label { font-size: 0.75rem; font-weight: 700; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+    .income-docs ul { list-style: none; padding: 0; }
+    .income-docs ul li {
+      font-size: 0.82rem; color: var(--muted); line-height: 1.6;
+      padding-left: 1.1rem; position: relative;
+    }
+    .income-docs ul li::before { content: '›'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+    .income-card.highlight .income-docs ul li::before { color: #d97706; }
+
+    .income-warn {
+      background: #fef2f2; border-radius: 6px;
+      padding: 8px 10px; margin-top: 0.65rem;
+      font-size: 0.79rem; color: #991b1b; line-height: 1.55;
+    }
+
     /* ── DOCS ── */
     #docs { background: var(--bg); }
 
@@ -670,6 +770,7 @@
     <li><a href="#how">ขั้นตอน</a></li>
     <li><a href="#why">ทำไมได้คืนช้า</a></li>
     <li><a href="#docs">เอกสารลดหย่อน</a></li>
+    <li><a href="#income">ค่าใช้จ่ายเงินได้</a></li>
     <li><a href="#contact" class="nav-cta">ติดต่อเลย</a></li>
   </ul>
 </nav>
@@ -1175,6 +1276,240 @@
 
       </div>
     </div>
+
+  </div>
+</section>
+
+<!-- INCOME TYPES -->
+<section id="income">
+  <div class="container">
+    <span class="tag">ประเภทเงินได้</span>
+    <h2 class="section-title">อัตราหักค่าใช้จ่ายแต่ละประเภทเงินได้<br>และเอกสารที่สรรพากรอาจขอ</h2>
+
+    <div class="income-alert">
+      <span style="font-size:1.5rem;flex-shrink:0;">⚠️</span>
+      <div>
+        <strong>ยื่นผิดประเภท = ต้องจ่ายภาษีเพิ่ม</strong>
+        <p>ถ้ายื่นประเภทที่หักค่าใช้จ่ายได้สูงกว่า (เช่น 40(7)) โดยไม่มีเอกสารพิสูจน์ สรรพากรจะขอเอกสารย้อนหลัง
+        หากพิสูจน์ไม่ได้ จะถูกปรับเป็นประเภทที่หักได้น้อยกว่า — และต้องชำระภาษีส่วนต่างพร้อมเบี้ยปรับเงินเพิ่ม</p>
+      </div>
+    </div>
+
+    <!-- ตัวอย่างเปรียบเทียบ 40(2) vs 40(7) -->
+    <div class="income-example">
+      <h4>📊 ตัวอย่าง: รายได้ค่าบริการ 500,000 บาท — หักค่าใช้จ่ายต่างกันมาก</h4>
+      <div class="ex-row">
+        <div class="ex-box red">
+          <div class="ex-type">40(2) ค่านายหน้า / ค่าตอบแทน</div>
+          <div class="ex-rate">หักได้สูงสุด 100,000 บาท</div>
+          <div class="ex-note">50% แต่ไม่เกิน 100,000 บาท<br>เงินได้สุทธิ = 400,000 บาท</div>
+        </div>
+        <div class="ex-box green">
+          <div class="ex-type">40(7) รับเหมา (มีค่าวัสดุ)</div>
+          <div class="ex-rate">หักได้ 300,000 บาท</div>
+          <div class="ex-note">60% ไม่มีเพดาน<br>เงินได้สุทธิ = 200,000 บาท</div>
+        </div>
+      </div>
+      <p class="ex-conclusion">
+        ➡ ผลต่าง 200,000 บาท — แต่ถ้ายื่น 40(7) โดยไม่มีหลักฐานว่า "จัดหาวัสดุในส่วนสำคัญ"
+        สรรพากรจะปรับกลับเป็น 40(2) และเรียกเก็บภาษีส่วนต่างพร้อมเบี้ยปรับ
+      </p>
+    </div>
+
+    <!-- การ์ดแต่ละประเภทเงินได้ -->
+    <div class="income-grid">
+
+      <!-- 40(1) -->
+      <div class="income-card">
+        <div class="income-card-header">
+          <span class="income-type-badge">40(1)</span>
+          <span class="income-card-name">เงินเดือน ค่าจ้าง บำนาญ</span>
+        </div>
+        <div class="income-rate">
+          <span class="rate-num">50%</span>
+          <span class="rate-label">แต่ไม่เกิน 100,000 บาท</span>
+        </div>
+        <div class="income-examples-list">เงินเดือน · โบนัส · ค่าล่วงเวลา · บำนาญ</div>
+        <div class="income-docs">
+          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
+          <ul>
+            <li>หนังสือรับรองการหัก ณ ที่จ่าย (50 ทวิ) — นายจ้างส่งให้อัตโนมัติ</li>
+            <li>โดยปกติไม่ต้องพิสูจน์เพิ่ม เพราะนายจ้างรายงานข้อมูลเข้าระบบสรรพากรโดยตรง</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 40(2) -->
+      <div class="income-card">
+        <div class="income-card-header">
+          <span class="income-type-badge">40(2)</span>
+          <span class="income-card-name">ค่านายหน้า เบี้ยประชุม ค่าตอบแทน</span>
+        </div>
+        <div class="income-rate">
+          <span class="rate-num">50%</span>
+          <span class="rate-label">แต่ไม่เกิน 100,000 บาท (รวมกับ 40(1))</span>
+        </div>
+        <div class="income-examples-list">ค่านายหน้าประกัน · เบี้ยประชุมกรรมการ · ค่าตอบแทนสัญญาจ้างทั่วไป</div>
+        <div class="income-docs">
+          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
+          <ul>
+            <li>ใบอนุญาตเป็นตัวแทนประกันชีวิต (กรณีตัวแทนประกัน)</li>
+            <li>สัญญาว่าจ้าง หรือสัญญาแต่งตั้งตัวแทน</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 40(3) -->
+      <div class="income-card">
+        <div class="income-card-header">
+          <span class="income-type-badge">40(3)</span>
+          <span class="income-card-name">ค่าลิขสิทธิ์ กู๊ดวิลล์ สิทธิอื่น</span>
+        </div>
+        <div class="income-rate">
+          <span class="rate-num">50%</span>
+          <span class="rate-label">แต่ไม่เกิน 100,000 บาท</span>
+        </div>
+        <div class="income-examples-list">ค่าลิขสิทธิ์หนังสือ เพลง ซอฟต์แวร์ · ค่าแฟรนไชส์ · ค่ากู๊ดวิลล์</div>
+        <div class="income-docs">
+          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
+          <ul>
+            <li>หนังสือรับรองลิขสิทธิ์จากกรมทรัพย์สินทางปัญญา</li>
+            <li>สัญญาอนุญาตให้ใช้สิทธิ</li>
+            <li>ตัวอย่างงานสร้างสรรค์ (กรณีลิขสิทธิ์)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 40(4) -->
+      <div class="income-card">
+        <div class="income-card-header">
+          <span class="income-type-badge">40(4)</span>
+          <span class="income-card-name">ดอกเบี้ย เงินปันผล</span>
+        </div>
+        <div class="income-rate">
+          <span class="rate-num">0%</span>
+          <span class="rate-label">ไม่มีค่าใช้จ่าย</span>
+        </div>
+        <div class="income-examples-list">ดอกเบี้ยเงินฝาก · เงินปันผลหุ้น · กำไรจากการขายหุ้น (นอกตลาด)</div>
+        <div class="income-docs">
+          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
+          <ul>
+            <li>หนังสือรับรองหัก ณ ที่จ่าย จากธนาคาร / บริษัทผู้จ่าย</li>
+            <li>กรณีเงินปันผลนอกตลาด: ตารางสรุปปันผล + บอจ.5 + งบการเงิน + รายงานการประชุม</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 40(5) -->
+      <div class="income-card">
+        <div class="income-card-header">
+          <span class="income-type-badge">40(5)</span>
+          <span class="income-card-name">ค่าเช่าทรัพย์สิน</span>
+        </div>
+        <div class="income-rate">
+          <span class="rate-num">10–30%</span>
+          <span class="rate-label">ตามประเภทสินทรัพย์</span>
+        </div>
+        <div class="income-examples-list">
+          บ้าน/โรงเรือน/ที่ดิน 30% · ยานพาหนะ 30% · เรือ 60% · สัตว์พาหนะ 50% · ทรัพย์สินอื่น 10%
+        </div>
+        <div class="income-docs">
+          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
+          <ul>
+            <li>สัญญาเช่า</li>
+            <li>โฉนดที่ดิน / เอกสารแสดงกรรมสิทธิ์</li>
+            <li>หลักฐานค่าใช้จ่ายจริง (กรณีหักตามจริง)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 40(6) -->
+      <div class="income-card">
+        <div class="income-card-header">
+          <span class="income-type-badge">40(6)</span>
+          <span class="income-card-name">วิชาชีพอิสระ</span>
+        </div>
+        <div class="income-rate">
+          <span class="rate-num">30–60%</span>
+          <span class="rate-label">ตามสาขาวิชาชีพ</span>
+        </div>
+        <div class="income-examples-list">
+          แพทย์ 60% · กฎหมาย/วิศวกร/สถาปนิก/บัญชี/ประณีตศิลป์ 30%
+        </div>
+        <div class="income-docs">
+          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
+          <ul>
+            <li>ใบอนุญาตประกอบวิชาชีพ (แพทย์สภา / สภาทนายความ / วสท. / สภาวิชาชีพบัญชี / โรคศิลปะ)</li>
+            <li>สัญญาว่าจ้าง</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 40(7) highlight -->
+      <div class="income-card highlight">
+        <div class="income-card-header">
+          <span class="income-type-badge">40(7)</span>
+          <span class="income-card-name">รับเหมาก่อสร้าง / รับเหมาทั่วไป</span>
+        </div>
+        <div class="income-rate">
+          <span class="rate-num">60%</span>
+          <span class="rate-label">ไม่มีเพดาน</span>
+        </div>
+        <div class="income-examples-list">
+          รับเหมาก่อสร้าง · ติดตั้งระบบ · ผลิตสินค้า — <strong>ต้องจัดหาสัมภาระ (วัสดุ) ในส่วนสำคัญ</strong>
+          ไม่ใช่แค่ค่าแรงงานอย่างเดียว
+        </div>
+        <div class="income-docs">
+          <div class="income-docs-label">เอกสารที่สรรพากรขอพิสูจน์</div>
+          <ul>
+            <li>สัญญาจ้างเหมา (ติดอากรแสตมป์)</li>
+            <li>ใบสั่งซื้อวัสดุ / ใบเสร็จค่าวัสดุ (พิสูจน์ว่าออกค่าวัสดุเอง)</li>
+            <li>ใบสั่งจ้างแรงงาน / สลิปจ่ายค่าแรง</li>
+            <li>บัญชีรายรับรายจ่าย</li>
+            <li>กรณีติดตั้งกล้องวงจรปิด: ใบเสร็จค่าซื้อและค่าติดตั้งระบบ CCTV</li>
+          </ul>
+        </div>
+        <div class="income-warn">
+          ⚠️ ถ้าพิสูจน์ไม่ได้ว่าจัดหาวัสดุเอง → สรรพากรปรับเป็น 40(2) หักได้แค่ 100,000 บาท
+          และต้องชำระภาษีส่วนต่างพร้อมเบี้ยปรับ
+        </div>
+      </div>
+
+      <!-- 40(8) -->
+      <div class="income-card">
+        <div class="income-card-header">
+          <span class="income-type-badge">40(8)</span>
+          <span class="income-card-name">ธุรกิจ พาณิชย์ อุตสาหกรรม เกษตร</span>
+        </div>
+        <div class="income-rate">
+          <span class="rate-num">40–85%</span>
+          <span class="rate-label">ตามประเภทธุรกิจ หรือหักตามจริง</span>
+        </div>
+        <div class="income-examples-list">
+          ธุรกิจทั่วไป · ขายสินค้า · บริการ · แกร็บแท็กซี่ · Freelance มีค่าใช้จ่าย
+        </div>
+        <div class="income-docs">
+          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
+          <ul>
+            <li>สัญญาจ้าง + คำอธิบายลักษณะงาน</li>
+            <li>หลักฐานค่าใช้จ่ายจริง (ใบเสร็จค่าวัสดุ ค่าแรง)</li>
+            <li>Statement บัญชีธนาคาร</li>
+            <li>บัญชีรายรับรายจ่าย</li>
+            <li>กรณีแกร็บ/แท็กซี่: รายงานอินเซ็นทีฟ (ค่ารอบ) ทั้งปีจาก Application</li>
+          </ul>
+        </div>
+        <div class="income-warn">
+          ถ้าไม่มีเอกสารค่าใช้จ่าย → สรรพากรอาจปรับให้หักได้แค่อัตราเหมาขั้นต่ำ
+          หรือปรับเป็น 40(2) ชำระภาษีเพิ่ม
+        </div>
+      </div>
+
+    </div><!-- /income-grid -->
+
+    <p style="margin-top:2.5rem; text-align:center; font-size:0.875rem; color:var(--muted); max-width:600px; margin-left:auto; margin-right:auto; line-height:1.75;">
+      ไม่แน่ใจว่าเงินได้ตัวเองอยู่ประเภทไหน หรือกังวลว่ายื่นถูกต้องหรือเปล่า?<br>
+      <a href="#contact" style="color:var(--blue); font-weight:600;">ปรึกษาเราได้ฟรี — ไม่มีค่าใช้จ่าย</a>
+    </p>
 
   </div>
 </section>
