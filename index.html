@@ -636,9 +636,21 @@
       margin-bottom: 0.85rem; line-height: 1.6;
     }
 
-    .income-docs { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
-    .income-docs-label { font-size: 0.75rem; font-weight: 700; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 0.4rem; }
-    .income-docs ul { list-style: none; padding: 0; }
+    .income-docs { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.65rem; }
+    .income-docs-tier {}
+    .income-docs-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      margin-bottom: 0.3rem; display: flex; align-items: center; gap: 4px;
+    }
+    .income-docs-label.blue { color: var(--blue); }
+    .income-docs-label.gold { color: #92400e; }
+    .income-docs-label.green { color: #15803d; }
+    .income-docs-auto {
+      font-size: 0.82rem; color: #15803d;
+      background: #f0fdf4; border-radius: 6px;
+      padding: 6px 10px; display: flex; align-items: center; gap: 6px;
+    }
+    .income-docs ul { list-style: none; padding: 0; margin: 0; }
     .income-docs ul li {
       font-size: 0.82rem; color: var(--muted); line-height: 1.6;
       padding-left: 1.1rem; position: relative;
@@ -1316,6 +1328,21 @@
       </p>
     </div>
 
+    <!-- หลักการ 2 ชั้น -->
+    <div style="background:#f0f4ff; border:1px solid #c7d7f9; border-radius:10px; padding:18px 22px; margin-bottom:2rem;">
+      <p style="font-size:0.875rem; font-weight:700; color:#1e40af; margin-bottom:0.6rem;">📌 ทำไมต้องแนบเอกสาร 2 ชั้น?</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div>
+          <p style="font-size:0.8rem; font-weight:700; color:var(--blue); margin-bottom:0.3rem;">📋 ชั้นที่ 1: พิสูจน์ว่าเป็นเงินได้ประเภทนั้นจริง</p>
+          <p style="font-size:0.8rem; color:var(--muted); line-height:1.6;">สรรพากรต้องรู้ว่าคุณทำงานประเภทไหน ด้วยสัญญาว่าจ้าง ใบอนุญาตวิชาชีพ หรือหลักฐานรับเงิน — สำหรับ 40(1) และ 40(2) ส่วนใหญ่ไม่ต้อง เพราะผู้จ่ายรายงานเข้าระบบแล้ว</p>
+        </div>
+        <div>
+          <p style="font-size:0.8rem; font-weight:700; color:#15803d; margin-bottom:0.3rem;">🧾 ชั้นที่ 2: พิสูจน์ว่ามีค่าใช้จ่ายจริงเท่าไร</p>
+          <p style="font-size:0.8rem; color:var(--muted); line-height:1.6;">ถ้าหักค่าใช้จ่ายแบบ "หักตามจริง" ต้องมีใบเสร็จ บัญชีรายจ่าย หรือ Statement — ถ้าหักเหมา (40(1)-(3) และ 40(6)) ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</p>
+        </div>
+      </div>
+    </div>
+
     <!-- การ์ดแต่ละประเภทเงินได้ -->
     <div class="income-grid">
 
@@ -1331,11 +1358,14 @@
         </div>
         <div class="income-examples-list">เงินเดือน · โบนัส · ค่าล่วงเวลา · บำนาญ</div>
         <div class="income-docs">
-          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
-          <ul>
-            <li>หนังสือรับรองการหัก ณ ที่จ่าย (50 ทวิ) — นายจ้างส่งให้อัตโนมัติ</li>
-            <li>โดยปกติไม่ต้องพิสูจน์เพิ่ม เพราะนายจ้างรายงานข้อมูลเข้าระบบสรรพากรโดยตรง</li>
-          </ul>
+          <div class="income-docs-tier">
+            <div class="income-docs-label blue">📋 พิสูจน์ประเภทเงินได้</div>
+            <div class="income-docs-auto">✓ นายจ้างรายงานข้อมูลเข้าระบบสรรพากรโดยตรง — ไม่ต้องแนบเอกสาร</div>
+          </div>
+          <div class="income-docs-tier">
+            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div>
+            <div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div>
+          </div>
         </div>
       </div>
 
@@ -1351,11 +1381,17 @@
         </div>
         <div class="income-examples-list">ค่านายหน้าประกัน · เบี้ยประชุมกรรมการ · ค่าตอบแทนสัญญาจ้างทั่วไป</div>
         <div class="income-docs">
-          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
-          <ul>
-            <li>ใบอนุญาตเป็นตัวแทนประกันชีวิต (กรณีตัวแทนประกัน)</li>
-            <li>สัญญาว่าจ้าง หรือสัญญาแต่งตั้งตัวแทน</li>
-          </ul>
+          <div class="income-docs-tier">
+            <div class="income-docs-label blue">📋 พิสูจน์ประเภทเงินได้</div>
+            <ul>
+              <li>ส่วนใหญ่ผู้จ่ายรายงานหัก ณ ที่จ่ายเข้าระบบแล้ว</li>
+              <li>กรณีตัวแทนประกัน: ใบอนุญาตเป็นตัวแทนประกันชีวิต</li>
+            </ul>
+          </div>
+          <div class="income-docs-tier">
+            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div>
+            <div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div>
+          </div>
         </div>
       </div>
 
@@ -1371,12 +1407,18 @@
         </div>
         <div class="income-examples-list">ค่าลิขสิทธิ์หนังสือ เพลง ซอฟต์แวร์ · ค่าแฟรนไชส์ · ค่ากู๊ดวิลล์</div>
         <div class="income-docs">
-          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
-          <ul>
-            <li>หนังสือรับรองลิขสิทธิ์จากกรมทรัพย์สินทางปัญญา</li>
-            <li>สัญญาอนุญาตให้ใช้สิทธิ</li>
-            <li>ตัวอย่างงานสร้างสรรค์ (กรณีลิขสิทธิ์)</li>
-          </ul>
+          <div class="income-docs-tier">
+            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
+            <ul>
+              <li>หนังสือรับรองความเป็นเจ้าของลิขสิทธิ์</li>
+              <li>สัญญาจ้าง / สัญญา / บันทึกข้อตกลง อันเป็นที่มาของรายได้</li>
+              <li>ตัวอย่างหนังสือหรือวารสารที่แสดงลิขสิทธิ์ของท่าน</li>
+            </ul>
+          </div>
+          <div class="income-docs-tier">
+            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div>
+            <div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div>
+          </div>
         </div>
       </div>
 
@@ -1390,13 +1432,19 @@
           <span class="rate-num">0%</span>
           <span class="rate-label">ไม่มีค่าใช้จ่าย</span>
         </div>
-        <div class="income-examples-list">ดอกเบี้ยเงินฝาก · เงินปันผลหุ้น · กำไรจากการขายหุ้น (นอกตลาด)</div>
+        <div class="income-examples-list">ดอกเบี้ยเงินฝาก · เงินปันผลหุ้น (ในตลาด) · เงินปันผลบริษัทนอกตลาด</div>
         <div class="income-docs">
-          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
-          <ul>
-            <li>หนังสือรับรองหัก ณ ที่จ่าย จากธนาคาร / บริษัทผู้จ่าย</li>
-            <li>กรณีเงินปันผลนอกตลาด: ตารางสรุปปันผล + บอจ.5 + งบการเงิน + รายงานการประชุม</li>
-          </ul>
+          <div class="income-docs-tier">
+            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
+            <ul>
+              <li>ดอกเบี้ย/ปันผลในตลาด: ธนาคาร/บริษัทรายงานหัก ณ ที่จ่ายเข้าระบบแล้ว</li>
+              <li>ปันผลบริษัทนอกตลาด: ตารางสรุปการจ่ายปันผล + บอจ.5 (บัญชีรายชื่อผู้ถือหุ้น) + งบการเงิน + รายงานการประชุม + หลักฐานการรับเงิน (statement / สลิปโอน)</li>
+            </ul>
+          </div>
+          <div class="income-docs-tier">
+            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div>
+            <div class="income-docs-auto">✓ ไม่มีค่าใช้จ่าย (กฎหมายไม่อนุญาตหัก)</div>
+          </div>
         </div>
       </div>
 
@@ -1411,15 +1459,22 @@
           <span class="rate-label">ตามประเภทสินทรัพย์</span>
         </div>
         <div class="income-examples-list">
-          บ้าน/โรงเรือน/ที่ดิน 30% · ยานพาหนะ 30% · เรือ 60% · สัตว์พาหนะ 50% · ทรัพย์สินอื่น 10%
+          บ้าน/โรงเรือน 30% · ที่ดิน 15% · ยานพาหนะ 30% · เรือ 60% · สัตว์พาหนะ 50% · ทรัพย์สินอื่น 10%
         </div>
         <div class="income-docs">
-          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
-          <ul>
-            <li>สัญญาเช่า</li>
-            <li>โฉนดที่ดิน / เอกสารแสดงกรรมสิทธิ์</li>
-            <li>หลักฐานค่าใช้จ่ายจริง (กรณีหักตามจริง)</li>
-          </ul>
+          <div class="income-docs-tier">
+            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
+            <ul>
+              <li>สัญญาเช่า</li>
+              <li>เอกสารแสดงกรรมสิทธิ์ทรัพย์สิน เช่น โฉนดที่ดิน (กรณีให้เช่าที่ดิน) หรือสำเนาทะเบียนรถ (กรณีให้เช่ายานพาหนะ)</li>
+            </ul>
+          </div>
+          <div class="income-docs-tier">
+            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย (กรณีหักจริง)</div>
+            <ul>
+              <li>หลักฐานแสดงต้นทุนและค่าใช้จ่ายของทรัพย์สิน</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1434,14 +1489,20 @@
           <span class="rate-label">ตามสาขาวิชาชีพ</span>
         </div>
         <div class="income-examples-list">
-          แพทย์ 60% · กฎหมาย/วิศวกร/สถาปนิก/บัญชี/ประณีตศิลป์ 30%
+          แพทย์ 60% · กฎหมาย/วิศวกร/สถาปนิก/บัญชี 30% · โรคศิลปะ (พยาบาล/นักกายภาพ) 30%
         </div>
         <div class="income-docs">
-          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
-          <ul>
-            <li>ใบอนุญาตประกอบวิชาชีพ (แพทย์สภา / สภาทนายความ / วสท. / สภาวิชาชีพบัญชี / โรคศิลปะ)</li>
-            <li>สัญญาว่าจ้าง</li>
-          </ul>
+          <div class="income-docs-tier">
+            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
+            <ul>
+              <li>ใบอนุญาตประกอบวิชาชีพ (แพทยสภา / สภาทนายความ / วสท. / สภาวิชาชีพบัญชี / ใบอนุญาตโรคศิลปะ)</li>
+              <li>สัญญาว่าจ้าง + คำอธิบายลักษณะงานที่ทำ</li>
+            </ul>
+          </div>
+          <div class="income-docs-tier">
+            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div>
+            <div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div>
+          </div>
         </div>
       </div>
 
@@ -1449,29 +1510,35 @@
       <div class="income-card highlight">
         <div class="income-card-header">
           <span class="income-type-badge">40(7)</span>
-          <span class="income-card-name">รับเหมาก่อสร้าง / รับเหมาทั่วไป</span>
+          <span class="income-card-name">รับเหมา (จัดหาสัมภาระเอง)</span>
         </div>
         <div class="income-rate">
           <span class="rate-num">60%</span>
           <span class="rate-label">ไม่มีเพดาน</span>
         </div>
         <div class="income-examples-list">
-          รับเหมาก่อสร้าง · ติดตั้งระบบ · ผลิตสินค้า — <strong>ต้องจัดหาสัมภาระ (วัสดุ) ในส่วนสำคัญ</strong>
-          ไม่ใช่แค่ค่าแรงงานอย่างเดียว
+          รับเหมาก่อสร้าง · ติดตั้งระบบ CCTV · ผลิตสินค้า — <strong>ต้องจัดหาวัสดุ/สัมภาระในส่วนสำคัญ</strong> ไม่ใช่แค่ค่าแรง
         </div>
         <div class="income-docs">
-          <div class="income-docs-label">เอกสารที่สรรพากรขอพิสูจน์</div>
-          <ul>
-            <li>สัญญาจ้างเหมา (ติดอากรแสตมป์)</li>
-            <li>ใบสั่งซื้อวัสดุ / ใบเสร็จค่าวัสดุ (พิสูจน์ว่าออกค่าวัสดุเอง)</li>
-            <li>ใบสั่งจ้างแรงงาน / สลิปจ่ายค่าแรง</li>
-            <li>บัญชีรายรับรายจ่าย</li>
-            <li>กรณีติดตั้งกล้องวงจรปิด: ใบเสร็จค่าซื้อและค่าติดตั้งระบบ CCTV</li>
-          </ul>
+          <div class="income-docs-tier">
+            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
+            <ul>
+              <li>สัญญาว่าจ้าง / ใบสั่งจ้าง ปิดอากรแสตมป์บริบูรณ์</li>
+              <li>คำอธิบายลักษณะงานที่ทำ</li>
+              <li>หลักฐานการรับเงิน / สำเนา Statement ธนาคาร</li>
+            </ul>
+          </div>
+          <div class="income-docs-tier">
+            <div class="income-docs-label gold">🧾 ต้องพิสูจน์ค่าใช้จ่าย (สำคัญมาก)</div>
+            <ul>
+              <li>ใบเสร็จรับเงินค่าวัสดุก่อสร้าง / ค่าซื้อและติดตั้งระบบ CCTV</li>
+              <li>บัญชีจ่ายค่าแรงลูกจ้าง / ใบสั่งจ้างแรงงาน</li>
+            </ul>
+          </div>
         </div>
         <div class="income-warn">
-          ⚠️ ถ้าพิสูจน์ไม่ได้ว่าจัดหาวัสดุเอง → สรรพากรปรับเป็น 40(2) หักได้แค่ 100,000 บาท
-          และต้องชำระภาษีส่วนต่างพร้อมเบี้ยปรับ
+          ⚠️ ถ้าพิสูจน์ไม่ได้ว่า "จัดหาวัสดุในส่วนสำคัญเอง" → สรรพากรปรับเป็น 40(2)
+          หักได้แค่ 100,000 บาท และต้องชำระภาษีส่วนต่างพร้อมเบี้ยปรับ
         </div>
       </div>
 
@@ -1479,28 +1546,36 @@
       <div class="income-card">
         <div class="income-card-header">
           <span class="income-type-badge">40(8)</span>
-          <span class="income-card-name">ธุรกิจ พาณิชย์ อุตสาหกรรม เกษตร</span>
+          <span class="income-card-name">ธุรกิจ พาณิชย์ บริการ อื่นๆ</span>
         </div>
         <div class="income-rate">
           <span class="rate-num">40–85%</span>
-          <span class="rate-label">ตามประเภทธุรกิจ หรือหักตามจริง</span>
+          <span class="rate-label">ตามประเภท หรือหักตามจริง</span>
         </div>
         <div class="income-examples-list">
-          ธุรกิจทั่วไป · ขายสินค้า · บริการ · แกร็บแท็กซี่ · Freelance มีค่าใช้จ่าย
+          ธุรกิจทั่วไป · Freelance · แกร็บแท็กซี่ · ขายสินค้า — ค่าใช้จ่ายสูงหากพิสูจน์ได้
         </div>
         <div class="income-docs">
-          <div class="income-docs-label">เอกสารที่สรรพากรอาจขอ</div>
-          <ul>
-            <li>สัญญาจ้าง + คำอธิบายลักษณะงาน</li>
-            <li>หลักฐานค่าใช้จ่ายจริง (ใบเสร็จค่าวัสดุ ค่าแรง)</li>
-            <li>Statement บัญชีธนาคาร</li>
-            <li>บัญชีรายรับรายจ่าย</li>
-            <li>กรณีแกร็บ/แท็กซี่: รายงานอินเซ็นทีฟ (ค่ารอบ) ทั้งปีจาก Application</li>
-          </ul>
+          <div class="income-docs-tier">
+            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
+            <ul>
+              <li>สัญญาจ้าง / ใบสั่งซื้อ / ใบสั่งจ้าง</li>
+              <li>คำอธิบายลักษณะงานที่ก่อให้เกิดรายได้</li>
+              <li>กรณีแกร็บ/แท็กซี่: รายงานอินเซ็นทีฟ (ค่ารอบ) ทั้งปี จาก App</li>
+            </ul>
+          </div>
+          <div class="income-docs-tier">
+            <div class="income-docs-label gold">🧾 ต้องพิสูจน์ค่าใช้จ่าย (ถ้าจะหักตามจริง)</div>
+            <ul>
+              <li>หลักฐานค่าใช้จ่ายในการดำเนินงาน (ใบเสร็จ / ใบกำกับภาษี)</li>
+              <li>บัญชีแสดงรายได้และรายจ่าย</li>
+              <li>Statement บัญชีธนาคาร — หลักฐานการรับเงิน</li>
+            </ul>
+          </div>
         </div>
         <div class="income-warn">
-          ถ้าไม่มีเอกสารค่าใช้จ่าย → สรรพากรอาจปรับให้หักได้แค่อัตราเหมาขั้นต่ำ
-          หรือปรับเป็น 40(2) ชำระภาษีเพิ่ม
+          ถ้าไม่มีเอกสารค่าใช้จ่าย → ต้องปรับเป็น 40(2) หักเหมา 100,000 บาท
+          และชำระภาษีส่วนต่างเพิ่ม
         </div>
       </div>
 
