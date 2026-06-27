@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Apinya Advisory ตัวแทนช่วยติดต่อสรรพากร บริการขอคืนภาษีเงินได้บุคคลธรรมดา แนะนำเอกสารลดหย่อน ติดตามสถานะ ฟรีทุกเคส">
-  <title>Apinya Advisory | ที่ปรึกษาภาษีและบัญชี</title>
+  <meta name="description" content="ทำไมขอคืนภาษีช้า? อธิบายกระบวนการสรรพากร เอกสารลดหย่อน ประเภทเงินได้ โดย Apinya Advisory">
+  <title>ทำไมคืนภาษีช้า? | Apinya Advisory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -48,7 +48,7 @@
 
     .nav-logo {
       display: flex; align-items: center; gap: 10px;
-      text-decoration: none;
+      text-decoration: none; flex-shrink: 0;
     }
 
     .logo-mark {
@@ -58,17 +58,16 @@
       display: flex; align-items: center; justify-content: center;
       font-weight: 700; font-size: 0.85rem; color: white;
       font-family: 'Inter', sans-serif;
-      letter-spacing: -0.5px;
     }
 
     .logo-text {
       color: white; font-weight: 600; font-size: 1rem;
-      font-family: 'Inter', sans-serif; letter-spacing: -0.2px;
+      font-family: 'Inter', sans-serif;
     }
 
     .logo-text span { color: var(--gold2); }
 
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
 
     .nav-links a {
       color: rgba(255,255,255,0.7); text-decoration: none;
@@ -79,16 +78,13 @@
     .nav-links a:hover { color: white; }
 
     .nav-cta {
-      background: var(--gold);
-      color: white !important;
-      padding: 7px 16px;
-      border-radius: 6px;
-      font-weight: 600 !important;
-      font-size: 0.82rem !important;
+      background: var(--gold); color: white !important;
+      padding: 7px 16px; border-radius: 6px;
+      font-weight: 600 !important; font-size: 0.82rem !important;
       transition: background 0.2s !important;
     }
 
-    .nav-cta:hover { background: #b45309 !important; color: white !important; }
+    .nav-cta:hover { background: #b45309 !important; }
 
     /* ── HERO ── */
     .hero {
@@ -122,14 +118,12 @@
       color: #93c5fd;
       font-size: 0.8rem; font-weight: 500;
       padding: 7px 18px; border-radius: 100px;
-      margin-bottom: 2rem;
-      position: relative; z-index: 1;
+      margin-bottom: 2rem; position: relative; z-index: 1;
     }
 
     .badge-dot {
       width: 6px; height: 6px;
-      background: var(--gold2);
-      border-radius: 50%;
+      background: var(--gold2); border-radius: 50%;
       animation: pulse 2s infinite;
     }
 
@@ -160,7 +154,7 @@
     .hero p.desc {
       font-size: clamp(0.875rem, 1.8vw, 1rem);
       color: rgba(255,255,255,0.65);
-      max-width: 540px; line-height: 1.85;
+      max-width: 560px; line-height: 1.85;
       margin-bottom: 2.5rem; position: relative; z-index: 1;
     }
 
@@ -191,6 +185,7 @@
       color: white; padding: 13px 26px; border-radius: 8px;
       font-weight: 500; font-size: 0.95rem;
       text-decoration: none; transition: all 0.22s;
+      cursor: pointer; font-family: inherit;
     }
 
     .btn-ghost:hover {
@@ -198,7 +193,6 @@
       border-color: rgba(255,255,255,0.5);
     }
 
-    /* credential strip */
     .cred-strip {
       display: flex; gap: 3rem; margin-top: 5rem;
       flex-wrap: wrap; justify-content: center;
@@ -243,6 +237,296 @@
       max-width: 580px; line-height: 1.75;
     }
 
+    /* ── WHY SLOW ── */
+    #why { background: white; }
+
+    .why-intro {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border: 1px solid #bae6fd;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin: 2rem 0 3rem;
+    }
+
+    .why-intro p {
+      font-size: 0.97rem; color: #0c4a6e; line-height: 1.85;
+    }
+
+    .why-intro strong { color: #075985; }
+
+    .why-compare {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin-bottom: 3rem;
+    }
+
+    .why-card { border-radius: 14px; padding: 28px; }
+
+    .why-card.fast { background: #f0fdf4; border: 1.5px solid #86efac; }
+    .why-card.slow { background: #fff7ed; border: 1.5px solid #fcd34d; }
+
+    .why-card-title {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem;
+    }
+
+    .why-card.fast .why-card-title { color: #15803d; }
+    .why-card.slow .why-card-title { color: #92400e; }
+
+    .why-card-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+
+    .why-card.fast .why-card-icon { background: #dcfce7; }
+    .why-card.slow .why-card-icon { background: #fef3c7; }
+
+    .why-list {
+      list-style: none; padding: 0;
+      display: flex; flex-direction: column; gap: 0.65rem;
+    }
+
+    .why-list li {
+      font-size: 0.875rem; line-height: 1.7;
+      padding-left: 1.25rem; position: relative;
+    }
+
+    .why-card.fast .why-list li { color: #166534; }
+    .why-card.fast .why-list li::before { content: '✓'; position: absolute; left: 0; font-weight: 700; color: #16a34a; }
+    .why-card.slow .why-list li { color: #78350f; }
+    .why-card.slow .why-list li::before { content: '!'; position: absolute; left: 0; font-weight: 700; color: #d97706; }
+
+    .why-mechanism {
+      background: var(--bg); border-radius: 14px;
+      padding: 28px 32px; margin-bottom: 2rem;
+    }
+
+    .why-mechanism h3 {
+      font-size: 1rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 1.25rem;
+    }
+
+    .mechanism-steps { display: flex; flex-direction: column; gap: 0.85rem; }
+
+    .mstep { display: flex; gap: 1rem; align-items: flex-start; }
+
+    .mstep-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--blue); color: white;
+      font-size: 0.8rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+
+    .mstep-text { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+    .mstep-text strong { color: var(--text); }
+
+    /* ติดตรวจ placeholder */
+    .placeholder-box {
+      background: #fafafa;
+      border: 2px dashed #cbd5e1;
+      border-radius: 14px;
+      padding: 36px 32px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .placeholder-box .ph-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+    .placeholder-box h3 {
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 0.5rem;
+    }
+
+    .placeholder-box p {
+      font-size: 0.9rem; color: var(--muted); line-height: 1.7;
+      max-width: 480px; margin: 0 auto;
+    }
+
+    .placeholder-badge {
+      display: inline-block;
+      background: #fef3c7; color: #92400e;
+      border: 1px solid #fcd34d;
+      font-size: 0.75rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 100px;
+      margin-bottom: 1rem; letter-spacing: 0.04em;
+    }
+
+    /* ── DOCS ── */
+    #docs { background: var(--bg); }
+
+    .doc-alert {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: #fffbeb; border: 1px solid #fcd34d;
+      border-left: 4px solid #d97706;
+      border-radius: 10px; padding: 18px 22px;
+      margin: 2rem 0 3rem;
+    }
+
+    .alert-icon { font-size: 1.4rem; flex-shrink: 0; line-height: 1; }
+    .doc-alert strong { display: block; font-size: 0.95rem; color: #78350f; margin-bottom: 0.35rem; }
+    .doc-alert p { font-size: 0.875rem; color: #92400e; line-height: 1.75; }
+
+    .doc-group { margin-bottom: 3rem; }
+
+    .doc-group-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.9rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 1rem;
+    }
+
+    .doc-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px;
+      transition: box-shadow 0.2s;
+    }
+
+    .doc-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+    .doc-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .doc-name { font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+
+    .badge-notify {
+      background: #fff7ed; color: #c2410c;
+      border: 1px solid #fed7aa;
+      font-size: 0.68rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 100px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+
+    .badge-attach {
+      background: #f0fdf4; color: #15803d;
+      border: 1px solid #bbf7d0;
+      font-size: 0.68rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 100px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+
+    .doc-list {
+      list-style: none; padding: 0;
+      display: flex; flex-direction: column; gap: 0.45rem;
+    }
+
+    .doc-list li {
+      font-size: 0.845rem; color: var(--muted); line-height: 1.65;
+      padding-left: 1.2rem; position: relative;
+    }
+
+    .doc-list li::before {
+      content: '›'; position: absolute; left: 0;
+      color: var(--blue); font-weight: 700; font-size: 1rem; line-height: 1.4;
+    }
+
+    .doc-list li strong { color: var(--text); }
+
+    .doc-note {
+      margin-top: 0.65rem; padding: 8px 10px;
+      background: #fffbeb; border-radius: 6px;
+      font-size: 0.8rem; color: #92400e; line-height: 1.55;
+    }
+
+    /* ── INCOME ── */
+    #income { background: white; }
+
+    .income-alert {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: #fef2f2; border: 1px solid #fca5a5;
+      border-left: 4px solid #dc2626;
+      border-radius: 10px; padding: 18px 22px;
+      margin: 2rem 0 3rem;
+    }
+
+    .income-alert strong { display: block; font-size: 0.95rem; color: #7f1d1d; margin-bottom: 0.35rem; }
+    .income-alert p { font-size: 0.875rem; color: #991b1b; line-height: 1.75; }
+
+    .income-example {
+      background: #fff7ed; border: 1px solid #fed7aa;
+      border-radius: 10px; padding: 18px 22px; margin-bottom: 3rem;
+    }
+
+    .income-example h4 { font-size: 0.9rem; font-weight: 700; color: #78350f; margin-bottom: 0.75rem; }
+
+    .ex-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.5rem; }
+
+    .ex-box { background: white; border-radius: 8px; padding: 12px 16px; border: 1px solid var(--border); }
+    .ex-box .ex-type { font-size: 0.78rem; font-weight: 700; color: var(--muted); letter-spacing: 0.04em; }
+    .ex-box .ex-rate { font-size: 1.1rem; font-weight: 700; margin: 4px 0 2px; }
+    .ex-box.green .ex-rate { color: #15803d; }
+    .ex-box.red .ex-rate { color: #dc2626; }
+    .ex-box .ex-note { font-size: 0.8rem; color: var(--muted); }
+    .income-example .ex-conclusion { font-size: 0.84rem; color: #92400e; margin-top: 0.75rem; line-height: 1.65; }
+
+    .income-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .income-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px; position: relative; overflow: hidden;
+    }
+
+    .income-card.highlight { background: #fffbeb; border-color: #fcd34d; }
+
+    .income-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.75rem; }
+
+    .income-type-badge {
+      background: var(--navy); color: white;
+      font-size: 0.78rem; font-weight: 700;
+      padding: 4px 10px; border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .income-card.highlight .income-type-badge { background: #d97706; }
+    .income-card-name { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+
+    .income-rate { display: flex; align-items: baseline; gap: 6px; margin-bottom: 0.5rem; }
+    .rate-num { font-size: 1.6rem; font-weight: 700; color: var(--blue); font-family: 'Inter', sans-serif; line-height: 1; }
+    .income-card.highlight .rate-num { color: #d97706; }
+    .rate-label { font-size: 0.8rem; color: var(--muted); }
+
+    .income-examples-list { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.85rem; line-height: 1.6; }
+
+    .income-docs { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.65rem; }
+    .income-docs-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      margin-bottom: 0.3rem; display: flex; align-items: center; gap: 4px;
+    }
+    .income-docs-label.blue { color: var(--blue); }
+    .income-docs-label.gold { color: #92400e; }
+    .income-docs-label.green { color: #15803d; }
+    .income-docs-auto {
+      font-size: 0.82rem; color: #15803d;
+      background: #f0fdf4; border-radius: 6px;
+      padding: 6px 10px; display: flex; align-items: center; gap: 6px;
+    }
+    .income-docs ul { list-style: none; padding: 0; margin: 0; }
+    .income-docs ul li {
+      font-size: 0.82rem; color: var(--muted); line-height: 1.6;
+      padding-left: 1.1rem; position: relative;
+    }
+    .income-docs ul li::before { content: '›'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+    .income-card.highlight .income-docs ul li::before { color: #d97706; }
+    .income-warn {
+      background: #fef2f2; border-radius: 6px;
+      padding: 8px 10px; margin-top: 0.65rem;
+      font-size: 0.79rem; color: #991b1b; line-height: 1.55;
+    }
+
     /* ── SERVICES ── */
     #services { background: var(--bg); }
 
@@ -263,10 +547,7 @@
       border-color: #bfdbfe; transform: translateY(-3px);
     }
 
-    .svc-card.soon {
-      opacity: 0.65; cursor: default;
-    }
-
+    .svc-card.soon { opacity: 0.65; cursor: default; }
     .svc-card.soon:hover { transform: none; box-shadow: none; border-color: var(--border); }
 
     .svc-top {
@@ -284,28 +565,11 @@
     .svc-icon.gold { background: #fffbeb; }
     .svc-icon.green { background: #ecfdf5; }
 
-    .badge-free {
-      background: #dcfce7; color: #15803d;
-      font-size: 0.7rem; font-weight: 700;
-      padding: 3px 9px; border-radius: 100px;
-      letter-spacing: 0.05em;
-    }
+    .badge-free { background: #dcfce7; color: #15803d; font-size: 0.7rem; font-weight: 700; padding: 3px 9px; border-radius: 100px; }
+    .badge-soon { background: #f1f5f9; color: #94a3b8; font-size: 0.7rem; font-weight: 600; padding: 3px 9px; border-radius: 100px; }
 
-    .badge-soon {
-      background: #f1f5f9; color: #94a3b8;
-      font-size: 0.7rem; font-weight: 600;
-      padding: 3px 9px; border-radius: 100px;
-      letter-spacing: 0.05em;
-    }
-
-    .svc-card h3 {
-      font-size: 1rem; font-weight: 600;
-      color: var(--navy); margin-bottom: 0.4rem;
-    }
-
-    .svc-card p {
-      font-size: 0.875rem; color: var(--muted); line-height: 1.7;
-    }
+    .svc-card h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+    .svc-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
 
     /* ── EXPERT ── */
     #expert { background: white; }
@@ -332,31 +596,19 @@
     .expert-avatar {
       width: 80px; height: 80px;
       background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
-      border: 2px solid rgba(255,255,255,0.25);
-      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.25); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 2.2rem; margin: 0 auto 1.25rem;
       position: relative; z-index: 1;
     }
 
-    .expert-name {
-      font-size: 1.35rem; font-weight: 700;
-      margin-bottom: 0.3rem; position: relative; z-index: 1;
-    }
+    .expert-name { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.3rem; position: relative; z-index: 1; }
+    .expert-title { color: #93c5fd; font-size: 0.875rem; margin-bottom: 1.75rem; position: relative; z-index: 1; }
 
-    .expert-title {
-      color: #93c5fd; font-size: 0.875rem;
-      margin-bottom: 1.75rem; position: relative; z-index: 1;
-    }
-
-    .expert-badges {
-      display: flex; flex-direction: column; gap: 0.65rem;
-      position: relative; z-index: 1;
-    }
+    .expert-badges { display: flex; flex-direction: column; gap: 0.65rem; position: relative; z-index: 1; }
 
     .exp-badge {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
       border-radius: 8px; padding: 10px 14px;
       font-size: 0.85rem; color: rgba(255,255,255,0.85);
       display: flex; align-items: center; gap: 8px;
@@ -364,24 +616,16 @@
 
     .exp-badge span { font-size: 1rem; }
 
-    .about-points {
-      display: flex; flex-direction: column; gap: 1.5rem;
-    }
-
+    .about-points { display: flex; flex-direction: column; gap: 1.5rem; }
     .about-point { display: flex; gap: 1rem; align-items: flex-start; }
 
     .point-icon {
       width: 46px; height: 46px; flex-shrink: 0;
       background: #eff6ff; border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.15rem;
+      display: flex; align-items: center; justify-content: center; font-size: 1.15rem;
     }
 
-    .point-text h4 {
-      font-size: 0.97rem; font-weight: 600;
-      color: var(--navy); margin-bottom: 0.2rem;
-    }
-
+    .point-text h4 { font-size: 0.97rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
     .point-text p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
 
     /* ── HOW ── */
@@ -453,311 +697,13 @@
 
     footer strong { color: rgba(255,255,255,0.6); font-weight: 500; }
 
-    /* ── WHY SLOW ── */
-    #why { background: white; }
-
-    .why-intro {
-      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-      border: 1px solid #bae6fd;
-      border-radius: 14px;
-      padding: 28px 32px;
-      margin: 2rem 0 3rem;
-    }
-
-    .why-intro p {
-      font-size: 0.97rem; color: #0c4a6e; line-height: 1.85;
-    }
-
-    .why-intro strong { color: #075985; }
-
-    .why-compare {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.5rem; margin-bottom: 3rem;
-    }
-
-    .why-card {
-      border-radius: 14px; padding: 28px;
-    }
-
-    .why-card.fast {
-      background: #f0fdf4; border: 1.5px solid #86efac;
-    }
-
-    .why-card.slow {
-      background: #fff7ed; border: 1.5px solid #fcd34d;
-    }
-
-    .why-card-title {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 1rem; font-weight: 700;
-      margin-bottom: 1.25rem;
-    }
-
-    .why-card.fast .why-card-title { color: #15803d; }
-    .why-card.slow .why-card-title { color: #92400e; }
-
-    .why-card-icon {
-      width: 40px; height: 40px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-    }
-
-    .why-card.fast .why-card-icon { background: #dcfce7; }
-    .why-card.slow .why-card-icon { background: #fef3c7; }
-
-    .why-list {
-      list-style: none; padding: 0;
-      display: flex; flex-direction: column; gap: 0.65rem;
-    }
-
-    .why-list li {
-      font-size: 0.875rem; line-height: 1.7;
-      padding-left: 1.25rem; position: relative;
-    }
-
-    .why-card.fast .why-list li { color: #166534; }
-    .why-card.fast .why-list li::before { content: '✓'; position: absolute; left: 0; font-weight: 700; color: #16a34a; }
-    .why-card.slow .why-list li { color: #78350f; }
-    .why-card.slow .why-list li::before { content: '!'; position: absolute; left: 0; font-weight: 700; color: #d97706; }
-
-    .why-mechanism {
-      background: var(--bg); border-radius: 14px;
-      padding: 28px 32px;
-    }
-
-    .why-mechanism h3 {
-      font-size: 1rem; font-weight: 700;
-      color: var(--navy); margin-bottom: 1.25rem;
-    }
-
-    .mechanism-steps {
-      display: flex; flex-direction: column; gap: 0.85rem;
-    }
-
-    .mstep {
-      display: flex; gap: 1rem; align-items: flex-start;
-    }
-
-    .mstep-num {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--blue); color: white;
-      font-size: 0.8rem; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; margin-top: 1px;
-    }
-
-    .mstep-text {
-      font-size: 0.88rem; color: var(--muted); line-height: 1.7;
-    }
-
-    .mstep-text strong { color: var(--text); }
-
-    /* ── INCOME TYPES ── */
-    #income { background: white; }
-
-    .income-alert {
-      display: flex; gap: 1rem; align-items: flex-start;
-      background: #fef2f2; border: 1px solid #fca5a5;
-      border-left: 4px solid #dc2626;
-      border-radius: 10px; padding: 18px 22px;
-      margin: 2rem 0 3rem;
-    }
-
-    .income-alert strong { display: block; font-size: 0.95rem; color: #7f1d1d; margin-bottom: 0.35rem; }
-    .income-alert p { font-size: 0.875rem; color: #991b1b; line-height: 1.75; }
-
-    .income-example {
-      background: #fff7ed; border: 1px solid #fed7aa;
-      border-radius: 10px; padding: 18px 22px;
-      margin-bottom: 3rem;
-    }
-
-    .income-example h4 { font-size: 0.9rem; font-weight: 700; color: #78350f; margin-bottom: 0.75rem; }
-    .income-example .ex-row {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1rem; margin-bottom: 0.5rem;
-    }
-    .ex-box {
-      background: white; border-radius: 8px; padding: 12px 16px;
-      border: 1px solid var(--border);
-    }
-    .ex-box .ex-type { font-size: 0.78rem; font-weight: 700; color: var(--muted); letter-spacing: 0.04em; }
-    .ex-box .ex-rate { font-size: 1.1rem; font-weight: 700; margin: 4px 0 2px; }
-    .ex-box.green .ex-rate { color: #15803d; }
-    .ex-box.red .ex-rate { color: #dc2626; }
-    .ex-box .ex-note { font-size: 0.8rem; color: var(--muted); }
-    .income-example .ex-conclusion {
-      font-size: 0.84rem; color: #92400e; margin-top: 0.75rem; line-height: 1.65;
-    }
-
-    .income-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .income-card {
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 14px; padding: 22px;
-      position: relative; overflow: hidden;
-    }
-
-    .income-card.highlight {
-      background: #fffbeb; border-color: #fcd34d;
-    }
-
-    .income-card-header {
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 0.75rem;
-    }
-
-    .income-type-badge {
-      background: var(--navy); color: white;
-      font-size: 0.78rem; font-weight: 700;
-      padding: 4px 10px; border-radius: 6px;
-      font-family: 'Inter', sans-serif; letter-spacing: 0.02em;
-    }
-
-    .income-card.highlight .income-type-badge { background: #d97706; }
-
-    .income-card-name { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
-
-    .income-rate {
-      display: flex; align-items: baseline; gap: 6px;
-      margin-bottom: 0.5rem;
-    }
-
-    .rate-num { font-size: 1.6rem; font-weight: 700; color: var(--blue); font-family: 'Inter', sans-serif; line-height: 1; }
-    .income-card.highlight .rate-num { color: #d97706; }
-    .rate-label { font-size: 0.8rem; color: var(--muted); }
-
-    .income-examples-list {
-      font-size: 0.82rem; color: var(--muted);
-      margin-bottom: 0.85rem; line-height: 1.6;
-    }
-
-    .income-docs { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.65rem; }
-    .income-docs-tier {}
-    .income-docs-label {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
-      margin-bottom: 0.3rem; display: flex; align-items: center; gap: 4px;
-    }
-    .income-docs-label.blue { color: var(--blue); }
-    .income-docs-label.gold { color: #92400e; }
-    .income-docs-label.green { color: #15803d; }
-    .income-docs-auto {
-      font-size: 0.82rem; color: #15803d;
-      background: #f0fdf4; border-radius: 6px;
-      padding: 6px 10px; display: flex; align-items: center; gap: 6px;
-    }
-    .income-docs ul { list-style: none; padding: 0; margin: 0; }
-    .income-docs ul li {
-      font-size: 0.82rem; color: var(--muted); line-height: 1.6;
-      padding-left: 1.1rem; position: relative;
-    }
-    .income-docs ul li::before { content: '›'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
-    .income-card.highlight .income-docs ul li::before { color: #d97706; }
-
-    .income-warn {
-      background: #fef2f2; border-radius: 6px;
-      padding: 8px 10px; margin-top: 0.65rem;
-      font-size: 0.79rem; color: #991b1b; line-height: 1.55;
-    }
-
-    /* ── DOCS ── */
-    #docs { background: var(--bg); }
-
-    .doc-alert {
-      display: flex; gap: 1rem; align-items: flex-start;
-      background: #fffbeb; border: 1px solid #fcd34d;
-      border-left: 4px solid #d97706;
-      border-radius: 10px; padding: 18px 22px;
-      margin: 2rem 0 3rem;
-    }
-
-    .alert-icon { font-size: 1.4rem; flex-shrink: 0; line-height: 1; }
-    .doc-alert strong { display: block; font-size: 0.95rem; color: #78350f; margin-bottom: 0.35rem; }
-    .doc-alert p { font-size: 0.875rem; color: #92400e; line-height: 1.75; }
-
-    .doc-group { margin-bottom: 3rem; }
-
-    .doc-group-label {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 0.9rem; font-weight: 700;
-      color: var(--navy); margin-bottom: 1rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 2px solid var(--border);
-    }
-
-    .doc-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-      gap: 1rem;
-    }
-
-    .doc-card {
-      background: white; border: 1px solid var(--border);
-      border-radius: 12px; padding: 20px 22px;
-      transition: box-shadow 0.2s;
-    }
-
-    .doc-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-
-    .doc-top {
-      display: flex; align-items: flex-start;
-      justify-content: space-between; gap: 0.75rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .doc-name { font-size: 0.95rem; font-weight: 600; color: var(--navy); }
-
-    .badge-notify {
-      background: #fff7ed; color: #c2410c;
-      border: 1px solid #fed7aa;
-      font-size: 0.68rem; font-weight: 700;
-      padding: 3px 8px; border-radius: 100px;
-      white-space: nowrap; flex-shrink: 0;
-      letter-spacing: 0.02em;
-    }
-
-    .badge-attach {
-      background: #f0fdf4; color: #15803d;
-      border: 1px solid #bbf7d0;
-      font-size: 0.68rem; font-weight: 700;
-      padding: 3px 8px; border-radius: 100px;
-      white-space: nowrap; flex-shrink: 0;
-      letter-spacing: 0.02em;
-    }
-
-    .doc-list {
-      list-style: none; padding: 0;
-      display: flex; flex-direction: column; gap: 0.45rem;
-    }
-
-    .doc-list li {
-      font-size: 0.845rem; color: var(--muted); line-height: 1.65;
-      padding-left: 1.2rem; position: relative;
-    }
-
-    .doc-list li::before {
-      content: '›'; position: absolute; left: 0;
-      color: var(--blue); font-weight: 700; font-size: 1rem; line-height: 1.4;
-    }
-
-    .doc-list li strong { color: var(--text); }
-
-    .doc-note {
-      margin-top: 0.65rem; padding: 8px 10px;
-      background: #fffbeb; border-radius: 6px;
-      font-size: 0.8rem; color: #92400e; line-height: 1.55;
-    }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .expert-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .steps-wrap  { grid-template-columns: 1fr 1fr; }
       .steps-wrap::before { display: none; }
       .contact-grid { grid-template-columns: 1fr; }
+      .why-compare { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
@@ -765,6 +711,7 @@
       .services-grid { grid-template-columns: 1fr; }
       .steps-wrap    { grid-template-columns: 1fr; }
       .cred-strip    { gap: 2rem; }
+      .ex-row        { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -777,154 +724,64 @@
     <span class="logo-text">Apinya <span>Advisory</span></span>
   </a>
   <ul class="nav-links">
+    <li><a href="#why">ทำไมคืนช้า?</a></li>
+    <li><a href="#docs">เอกสารลดหย่อน</a></li>
+    <li><a href="#income">ประเภทเงินได้</a></li>
     <li><a href="#services">บริการ</a></li>
     <li><a href="#expert">ทีมงาน</a></li>
-    <li><a href="#how">ขั้นตอน</a></li>
-    <li><a href="#why">ทำไมได้คืนช้า</a></li>
-    <li><a href="#docs">เอกสารลดหย่อน</a></li>
-    <li><a href="#income">ค่าใช้จ่ายเงินได้</a></li>
-    <li><a href="#contact" class="nav-cta">ติดต่อเลย</a></li>
+    <li><a href="#contact" class="nav-cta">ปรึกษาฟรี</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- HERO — emotional hook สำหรับคนในกลุ่ม Facebook    -->
+<!-- ═══════════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
 
   <div class="hero-badge">
     <div class="badge-dot"></div>
-    บริการฟรี · ตัวแทนช่วยติดต่อและติดตามเรื่องกับสรรพากร
+    ข้อมูลจากกระบวนการจริงของกรมสรรพากร
   </div>
 
-  <h1>ขอคืนภาษีไม่ได้?<br>ให้เรา<em>ช่วยติดต่อ</em>ให้</h1>
-  <p class="hero-sub">Apinya Advisory · ตัวแทนช่วยติดต่อสรรพากร</p>
+  <h1>เพื่อนได้คืนภาษีแล้ว<br>ทำไมเรา<em>ยังไม่ได้?</em></h1>
+  <p class="hero-sub">ไม่ใช่ความผิดพลาด — มีเหตุผลที่ชัดเจน</p>
   <p class="desc">
-    เราเป็นประชาชนที่ผ่านประสบการณ์เรื่องภาษีมาด้วยตัวเอง<br>
-    และได้รับคำแนะนำจากสรรพากรโดยตรง อยากส่งต่อความรู้นั้นให้ทุกคน<br>
-    พร้อมเป็นตัวแทนติดต่อและติดตามเรื่องแทนคุณ — ฟรีทุกเคส
+    ระบบสรรพากรแบ่งการขอคืนภาษีออกเป็น 2 เส้นทาง<br>
+    บางคนได้ภายใน 3 วัน บางคนรอเป็นเดือน<br>
+    ขึ้นอยู่กับเงื่อนไขที่คุณอาจไม่รู้มาก่อน — อ่านและแชร์ได้เลย
   </p>
 
   <div class="hero-cta">
-    <a href="https://www.facebook.com/kunanon.kamsoontorn/" target="_blank" rel="noopener" class="btn-gold">
-      📘 ติดต่อผ่าน Facebook
-    </a>
-    <a href="#services" class="btn-ghost">ดูบริการทั้งหมด ↓</a>
+    <a href="#why" class="btn-gold">📖 ดูสาเหตุทั้งหมด ↓</a>
+    <button onclick="shareWebsite()" class="btn-ghost">📤 แชร์ให้เพื่อนที่รออยู่</button>
   </div>
 
   <div class="cred-strip">
     <div class="cred-item">
+      <div class="cred-num">3 วัน</div>
+      <div class="cred-label">กรณีระบบอนุมัติอัตโนมัติ</div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-num">หลักเดือน</div>
+      <div class="cred-label">กรณีเจ้าหน้าที่ต้องตรวจสอบ</div>
+    </div>
+    <div class="cred-item">
       <div class="cred-num">ฟรี</div>
-      <div class="cred-label">ทุกเคส ไม่มีค่าใช้จ่าย</div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-num">ตรง</div>
-      <div class="cred-label">ติดต่อสรรพากรแทนคุณได้เลย</div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-num">เร็ว</div>
-      <div class="cred-label">ไม่ต้องรอคิวโทรศัพท์เอง</div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-num">รู้จริง</div>
-      <div class="cred-label">ผ่านการรับคำแนะนำจากสรรพากร</div>
+      <div class="cred-label">ปรึกษาทุกเคส ไม่มีค่าใช้จ่าย</div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <span class="tag">บริการ</span>
-    <h2 class="section-title">ช่วยคุณได้เรื่องไหนบ้าง?</h2>
-    <p class="section-sub">บริการด้านภาษีเงินได้บุคคลธรรมดา ฟรีทุกเคส พร้อมขยายสู่บริการบัญชีในอนาคต</p>
-
-    <div class="services-grid">
-
-      <!-- Current services -->
-      <div class="svc-card">
-        <div class="svc-top">
-          <div class="svc-icon">💰</div>
-          <span class="badge-free">ฟรี</span>
-        </div>
-        <h3>ปรึกษาขอคืนภาษีเงินได้บุคคลธรรมดา</h3>
-        <p>วิเคราะห์สถานการณ์และแนะนำแนวทางการขอคืนภาษี ภ.ง.ด.90 และ ภ.ง.ด.91</p>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-top">
-          <div class="svc-icon">🔍</div>
-          <span class="badge-free">ฟรี</span>
-        </div>
-        <h3>ตรวจสอบสถานะการขอคืนภาษี</h3>
-        <p>ติดตามว่าเรื่องอยู่ขั้นตอนไหน รออยู่ที่ใคร มีปัญหาติดขัดอะไรหรือไม่</p>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-top">
-          <div class="svc-icon">📋</div>
-          <span class="badge-free">ฟรี</span>
-        </div>
-        <h3>วิธีได้รับเงินคืนให้ถูกต้องรวดเร็ว</h3>
-        <p>แนะนำขั้นตอนที่ถูกต้องตั้งแต่ต้นจนจบ ไม่ให้เรื่องค้างหรือถูกปฏิเสธ</p>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-top">
-          <div class="svc-icon">🧮</div>
-          <span class="badge-free">ฟรี</span>
-        </div>
-        <h3>ตรวจสอบสิทธิลดหย่อนภาษีที่ใช้ได้</h3>
-        <p>เช็คสิทธิลดหย่อนที่คุณมี เช่น ประกันชีวิต กองทุน LTF/RMF บุตร บิดามารดา</p>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-top">
-          <div class="svc-icon">📁</div>
-          <span class="badge-free">ฟรี</span>
-        </div>
-        <h3>เอกสารที่ต้องใช้ในการขอคืนภาษี</h3>
-        <p>แจ้งรายการเอกสารที่ต้องจัดเตรียม ไม่ต้องเดาหรือเดินทางไปสรรพากรหลายรอบ</p>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-top">
-          <div class="svc-icon">⏱️</div>
-          <span class="badge-free">ฟรี</span>
-        </div>
-        <h3>ระยะเวลาและติดตามเงินคืนภาษี</h3>
-        <p>สอบถามว่าเงินจะมาเมื่อไร และแก้ไขกรณีที่รอนานผิดปกติ</p>
-      </div>
-
-      <!-- Coming soon -->
-      <div class="svc-card soon">
-        <div class="svc-top">
-          <div class="svc-icon gold">📒</div>
-          <span class="badge-soon">เร็วๆ นี้</span>
-        </div>
-        <h3>รับทำบัญชีบุคคลธรรมดาและนิติบุคคล</h3>
-        <p>บริการจัดทำบัญชี งบการเงิน และรายงานทางบัญชีสำหรับบุคคลและธุรกิจ</p>
-      </div>
-
-      <div class="svc-card soon">
-        <div class="svc-top">
-          <div class="svc-icon green">📊</div>
-          <span class="badge-soon">เร็วๆ นี้</span>
-        </div>
-        <h3>วางแผนและยื่นภาษีนิติบุคคล</h3>
-        <p>ให้คำปรึกษาด้านการวางแผนภาษี และยื่นแบบภาษีสำหรับนิติบุคคลอย่างถูกต้อง</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- WHY SLOW -->
+<!-- ═══════════════════════════════════════ -->
+<!-- WHY SLOW — อธิบายกระบวนการ            -->
+<!-- ═══════════════════════════════════════ -->
 <section id="why">
   <div class="container">
     <span class="tag">ทำความเข้าใจ</span>
-    <h2 class="section-title">ทำไมบางคนได้คืนภาษีเร็ว บางคนช้า?</h2>
-    <p class="section-sub">คำถามที่ผู้เสียภาษีถามมากที่สุด — นี่คือคำตอบที่เราได้รับจากการสอบถามและศึกษากระบวนการของสรรพากรโดยตรง</p>
+    <h2 class="section-title">ทำไมบางคนได้คืน 3 วัน บางคนรอเป็นเดือน?</h2>
+    <p class="section-sub">เหตุผลอยู่ที่กระบวนการของสรรพากร ไม่ใช่ความผิดพลาดของคุณ</p>
 
     <div class="why-intro">
       <p>
@@ -935,6 +792,7 @@
       </p>
     </div>
 
+    <!-- เปรียบเทียบ 3 วัน vs ช้า -->
     <div class="why-compare">
       <div class="why-card fast">
         <div class="why-card-title">
@@ -964,6 +822,7 @@
       </div>
     </div>
 
+    <!-- กระบวนการตรวจสอบ -->
     <div class="why-mechanism">
       <h3>⚙️ กระบวนการตรวจสอบของสรรพากร เมื่อข้อมูลไม่ตรง</h3>
       <div class="mechanism-steps">
@@ -986,10 +845,24 @@
       </div>
     </div>
 
+    <!-- PLACEHOLDER: ติดตรวจแบบสุ่ม -->
+    <div class="placeholder-box">
+      <div class="ph-icon">🔬</div>
+      <span class="placeholder-badge">อยู่ระหว่างรวบรวมข้อมูล</span>
+      <h3>ทำไมบางคนข้อมูลตรงแล้ว แต่ยังติดตรวจ?</h3>
+      <p>
+        มีผู้เสียภาษีบางส่วนที่ข้อมูลตรงกับระบบสรรพากรทุกอย่าง แต่ยังถูก flag ให้ตรวจสอบ<br>
+        เราอยู่ระหว่างสอบถามข้อมูลเพิ่มเติมจากกองเทคโนโลยีสรรพากร<br>
+        จะอัปเดตคำอธิบายโดยละเอียดเร็วๆ นี้
+      </p>
+    </div>
+
   </div>
 </section>
 
-<!-- DOCS -->
+<!-- ═══════════════════════════════════════ -->
+<!-- DOCS — เอกสารลดหย่อน                  -->
+<!-- ═══════════════════════════════════════ -->
 <section id="docs">
   <div class="container">
     <span class="tag">เตรียมเอกสาร</span>
@@ -1004,17 +877,15 @@
           ตอนยื่นแบบ สรรพากรจะแสดงข้อมูลที่มีอยู่แล้วในระบบให้คุณเห็น
           <strong>ถ้าตัวเลขที่คุณกรอกตรงกับข้อมูลในระบบ → ไม่ต้องแนบเอกสาร</strong>
           แต่ถ้าไม่ตรง หรือมีรายการที่สรรพากรยังไม่มีข้อมูล → ต้องแนบเอกสารประกอบ<br><br>
-          ⚠️ <strong>รายการที่ต้องให้บริษัทส่งข้อมูลก่อน</strong> ได้แก่ ประกันชีวิต, ประกันสุขภาพ, RMF, SSF, Thai ESG, ดอกเบี้ยบ้าน
+          ⚠️ <strong>รายการที่ต้องให้บริษัทส่งข้อมูลก่อน:</strong> ประกันชีวิต, ประกันสุขภาพ, RMF, SSF, Thai ESG, ดอกเบี้ยบ้าน
           — ถ้าบริษัทยังไม่ส่ง สรรพากรจะไม่มีข้อมูล และจะไม่ให้สิทธิ์ แม้คุณจะจ่ายจริง
         </p>
       </div>
     </div>
 
-    <!-- กลุ่ม: ประกัน -->
     <div class="doc-group">
       <div class="doc-group-label">🛡️ ประกัน</div>
       <div class="doc-grid">
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">ประกันชีวิต</span>
@@ -1025,7 +896,6 @@
             <li><strong>กรมธรรม์ก่อนปี 2563:</strong> ใบเสร็จรับเงิน หรือหนังสือรับรองการชำระเบี้ยประกันชีวิต (ระยะ 10 ปีขึ้นไป)</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">ประกันชีวิตแบบบำนาญ</span>
@@ -1035,7 +905,6 @@
             <li>ใบเสร็จรับเงิน หรือหนังสือรับรองการชำระเบี้ยประกันแบบบำนาญ</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">ประกันสุขภาพ (ตัวเอง)</span>
@@ -1046,7 +915,6 @@
           </ul>
           <div class="doc-note">หากบริษัทประกันยังไม่ได้ส่งข้อมูล สรรพากรจะไม่รับสิทธิ์ แม้จ่ายจริง</div>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">ประกันสุขภาพ บิดา-มารดา</span>
@@ -1057,15 +925,12 @@
             <li>หรือแนบใบเสร็จรับเงินหรือหนังสือรับรองการชำระเบี้ย (ระบุชื่อผู้เอาประกัน)</li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- กลุ่ม: กองทุน -->
     <div class="doc-group">
       <div class="doc-group-label">📈 กองทุน</div>
       <div class="doc-grid">
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">กองทุนสำรองเลี้ยงชีพ (PVD)</span>
@@ -1075,7 +940,6 @@
             <li>ใบรับรองหรือใบแจ้งยอดเงินของสมาชิกกองทุนสำรองเลี้ยงชีพ (จากนายจ้าง)</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">RMF</span>
@@ -1086,7 +950,6 @@
           </ul>
           <div class="doc-note">ถ้า บลจ. ยังไม่ส่งข้อมูล สิทธิ์ลดหย่อนจะถูกปฏิเสธ</div>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">SSF (กองทุนรวมเพื่อการออม)</span>
@@ -1096,7 +959,6 @@
             <li>แจ้งบริษัทหลักทรัพย์จัดการกองทุน (บลจ.) ให้ส่งข้อมูลให้กรมสรรพากร</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">Thai ESG / Thai ESG X</span>
@@ -1106,9 +968,8 @@
             <li>แจ้งบริษัทหลักทรัพย์จัดการกองทุน (บลจ.) ให้ส่งข้อมูลให้กรมสรรพากร</li>
             <li>รวมถึงกรณี <strong>สับเปลี่ยนจาก LTF เป็น Thai ESG X</strong> ต้องแจ้ง บลจ. เช่นกัน</li>
           </ul>
-          <div class="doc-note">ไม่มีทางอื่น — ต้องแจ้ง บลจ. เท่านั้น ไม่มีเอกสารแนบแทนได้</div>
+          <div class="doc-note">ต้องแจ้ง บลจ. เท่านั้น ไม่มีเอกสารแนบแทนได้</div>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">LTF (กองทุนรวมหุ้นระยะยาว)</span>
@@ -1118,15 +979,12 @@
             <li>หนังสือรับรองการซื้อหน่วยลงทุน LTF (จาก บลจ.)</li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- กลุ่ม: ครอบครัว -->
     <div class="doc-group">
       <div class="doc-group-label">👨‍👩‍👧‍👦 ครอบครัว</div>
       <div class="doc-grid">
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">บุตร</span>
@@ -1138,7 +996,6 @@
             <li><strong>ผู้ชาย:</strong> ต้องแนบทะเบียนสมรสด้วย เพื่อยืนยันว่าเป็นบุตรชอบด้วยกฎหมาย</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">บิดา-มารดา</span>
@@ -1149,7 +1006,6 @@
           </ul>
           <div class="doc-note">แบบ ลย.03 ขอได้จากบิดา-มารดา หรือดาวน์โหลดจากเว็บกรมสรรพากร</div>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">ค่าฝากครรภ์ / คลอดบุตร</span>
@@ -1160,7 +1016,6 @@
             <li>ใบรับรองแพทย์</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">คนพิการ / ทุพพลภาพ</span>
@@ -1172,15 +1027,12 @@
             <li>หนังสือรับรองการเป็นผู้อุปการะ <strong>(ล.ย.04-1)</strong> + ใบรับรองแพทย์ (กรณีทุพพลภาพ)</li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- กลุ่ม: บ้าน / อสังหา -->
     <div class="doc-group">
       <div class="doc-group-label">🏠 บ้านและอสังหาริมทรัพย์</div>
       <div class="doc-grid">
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">ดอกเบี้ยเงินกู้ซื้อบ้าน</span>
@@ -1191,7 +1043,6 @@
             <li><strong>สัญญาก่อนปี 2564:</strong> หนังสือรับรองดอกเบี้ยเงินกู้ยืมเพื่อซื้อ/เช่าซื้อ/สร้างอาคาร</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">ซื้ออสังหาริมทรัพย์</span>
@@ -1203,7 +1054,6 @@
             <li>สำเนาภาพถ่ายโฉนดที่ดิน ด้านหน้าและด้านหลัง</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">ค่าเช่า / รายได้จากการให้เช่า</span>
@@ -1214,15 +1064,12 @@
             <li>เอกสารแสดงกรรมสิทธิ์ (โฉนดที่ดิน)</li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- กลุ่ม: อื่นๆ -->
     <div class="doc-group">
       <div class="doc-group-label">📋 อื่นๆ</div>
       <div class="doc-grid">
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">ประกันสังคม</span>
@@ -1232,7 +1079,6 @@
             <li>ใบรับรองยอดเงินสะสมที่สมาชิกส่งเข้าประกันสังคม (ขอได้จากสำนักงานประกันสังคม)</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">เงินบริจาค 1 เท่า (วัด / มูลนิธิ)</span>
@@ -1243,27 +1089,15 @@
             <li>หรือใบอนุโมทนาบัตรของวัดหรืออาราม</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">เงินบริจาค 2 เท่า (สถานศึกษา)</span>
             <span class="badge-attach">📎 แนบเอกสาร</span>
           </div>
           <ul class="doc-list">
-            <li>ใบเสร็จรับเงินบริจาคให้สถานศึกษา / กรมพินิจและคุ้มครองเด็กและเยาวชน / อบต. / อบจ. / กองทุนพัฒนาครู</li>
+            <li>ใบเสร็จรับเงินบริจาคให้สถานศึกษา / กรมพินิจฯ / อบต. / อบจ. / กองทุนพัฒนาครู</li>
           </ul>
         </div>
-
-        <div class="doc-card">
-          <div class="doc-top">
-            <span class="doc-name">ท่องเที่ยวในประเทศ</span>
-            <span class="badge-attach">📎 แนบเอกสาร</span>
-          </div>
-          <ul class="doc-list">
-            <li>ใบกำกับภาษีค่าท่องเที่ยว</li>
-          </ul>
-        </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">Easy E-Receipt</span>
@@ -1273,7 +1107,6 @@
             <li>ใบกำกับภาษีซื้อสินค้าอุปโภคบริโภค (e-Tax Invoice)</li>
           </ul>
         </div>
-
         <div class="doc-card">
           <div class="doc-top">
             <span class="doc-name">ออกจากงาน / สิ้นสุดสัญญาจ้าง</span>
@@ -1285,14 +1118,14 @@
             <li>หนังสือรับรองเงินเดือน 12 เดือนสุดท้าย</li>
           </ul>
         </div>
-
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- INCOME TYPES -->
+<!-- ═══════════════════════════════════════ -->
+<!-- INCOME TYPES — ประเภทเงินได้            -->
+<!-- ═══════════════════════════════════════ -->
 <section id="income">
   <div class="container">
     <span class="tag">ประเภทเงินได้</span>
@@ -1302,24 +1135,23 @@
       <span style="font-size:1.5rem;flex-shrink:0;">⚠️</span>
       <div>
         <strong>ยื่นผิดประเภท = ต้องจ่ายภาษีเพิ่ม</strong>
-        <p>ถ้ายื่นประเภทที่หักค่าใช้จ่ายได้สูงกว่า (เช่น 40(7)) โดยไม่มีเอกสารพิสูจน์ สรรพากรจะขอเอกสารย้อนหลัง
+        <p>ถ้ายื่นประเภทที่หักค่าใช้จ่ายได้สูงกว่าโดยไม่มีเอกสารพิสูจน์ สรรพากรจะขอเอกสารย้อนหลัง
         หากพิสูจน์ไม่ได้ จะถูกปรับเป็นประเภทที่หักได้น้อยกว่า — และต้องชำระภาษีส่วนต่างพร้อมเบี้ยปรับเงินเพิ่ม</p>
       </div>
     </div>
 
-    <!-- ตัวอย่างเปรียบเทียบ 40(2) vs 40(7) -->
     <div class="income-example">
       <h4>📊 ตัวอย่าง: รายได้ค่าบริการ 500,000 บาท — หักค่าใช้จ่ายต่างกันมาก</h4>
       <div class="ex-row">
         <div class="ex-box red">
           <div class="ex-type">40(2) ค่านายหน้า / ค่าตอบแทน</div>
           <div class="ex-rate">หักได้สูงสุด 100,000 บาท</div>
-          <div class="ex-note">50% แต่ไม่เกิน 100,000 บาท<br>เงินได้สุทธิ = 400,000 บาท</div>
+          <div class="ex-note">50% แต่ไม่เกิน 100,000 บาท · เงินได้สุทธิ = 400,000 บาท</div>
         </div>
         <div class="ex-box green">
           <div class="ex-type">40(7) รับเหมา (มีค่าวัสดุ)</div>
           <div class="ex-rate">หักได้ 300,000 บาท</div>
-          <div class="ex-note">60% ไม่มีเพดาน<br>เงินได้สุทธิ = 200,000 บาท</div>
+          <div class="ex-note">60% ไม่มีเพดาน · เงินได้สุทธิ = 200,000 บาท</div>
         </div>
       </div>
       <p class="ex-conclusion">
@@ -1328,268 +1160,168 @@
       </p>
     </div>
 
-    <!-- หลักการ 2 ชั้น -->
-    <div style="background:#f0f4ff; border:1px solid #c7d7f9; border-radius:10px; padding:18px 22px; margin-bottom:2rem;">
-      <p style="font-size:0.875rem; font-weight:700; color:#1e40af; margin-bottom:0.6rem;">📌 ทำไมต้องแนบเอกสาร 2 ชั้น?</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+    <div style="background:#f0f4ff;border:1px solid #c7d7f9;border-radius:10px;padding:18px 22px;margin-bottom:2rem;">
+      <p style="font-size:0.875rem;font-weight:700;color:#1e40af;margin-bottom:0.6rem;">📌 ทำไมต้องแนบเอกสาร 2 ชั้น?</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
         <div>
-          <p style="font-size:0.8rem; font-weight:700; color:var(--blue); margin-bottom:0.3rem;">📋 ชั้นที่ 1: พิสูจน์ว่าเป็นเงินได้ประเภทนั้นจริง</p>
-          <p style="font-size:0.8rem; color:var(--muted); line-height:1.6;">สรรพากรต้องรู้ว่าคุณทำงานประเภทไหน ด้วยสัญญาว่าจ้าง ใบอนุญาตวิชาชีพ หรือหลักฐานรับเงิน — สำหรับ 40(1) และ 40(2) ส่วนใหญ่ไม่ต้อง เพราะผู้จ่ายรายงานเข้าระบบแล้ว</p>
+          <p style="font-size:0.8rem;font-weight:700;color:var(--blue);margin-bottom:0.3rem;">📋 ชั้นที่ 1: พิสูจน์ว่าเป็นเงินได้ประเภทนั้นจริง</p>
+          <p style="font-size:0.8rem;color:var(--muted);line-height:1.6;">สรรพากรต้องรู้ว่าคุณทำงานประเภทไหน ด้วยสัญญาว่าจ้าง ใบอนุญาตวิชาชีพ หรือหลักฐานรับเงิน</p>
         </div>
         <div>
-          <p style="font-size:0.8rem; font-weight:700; color:#15803d; margin-bottom:0.3rem;">🧾 ชั้นที่ 2: พิสูจน์ว่ามีค่าใช้จ่ายจริงเท่าไร</p>
-          <p style="font-size:0.8rem; color:var(--muted); line-height:1.6;">ถ้าหักค่าใช้จ่ายแบบ "หักตามจริง" ต้องมีใบเสร็จ บัญชีรายจ่าย หรือ Statement — ถ้าหักเหมา (40(1)-(3) และ 40(6)) ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</p>
+          <p style="font-size:0.8rem;font-weight:700;color:#15803d;margin-bottom:0.3rem;">🧾 ชั้นที่ 2: พิสูจน์ว่ามีค่าใช้จ่ายจริงเท่าไร</p>
+          <p style="font-size:0.8rem;color:var(--muted);line-height:1.6;">ถ้าหักค่าใช้จ่ายแบบ "หักตามจริง" ต้องมีใบเสร็จ บัญชีรายจ่าย หรือ Statement</p>
         </div>
       </div>
     </div>
 
-    <!-- การ์ดแต่ละประเภทเงินได้ -->
     <div class="income-grid">
-
-      <!-- 40(1) -->
       <div class="income-card">
-        <div class="income-card-header">
-          <span class="income-type-badge">40(1)</span>
-          <span class="income-card-name">เงินเดือน ค่าจ้าง บำนาญ</span>
-        </div>
-        <div class="income-rate">
-          <span class="rate-num">50%</span>
-          <span class="rate-label">แต่ไม่เกิน 100,000 บาท</span>
-        </div>
+        <div class="income-card-header"><span class="income-type-badge">40(1)</span><span class="income-card-name">เงินเดือน ค่าจ้าง บำนาญ</span></div>
+        <div class="income-rate"><span class="rate-num">50%</span><span class="rate-label">แต่ไม่เกิน 100,000 บาท</span></div>
         <div class="income-examples-list">เงินเดือน · โบนัส · ค่าล่วงเวลา · บำนาญ</div>
         <div class="income-docs">
-          <div class="income-docs-tier">
-            <div class="income-docs-label blue">📋 พิสูจน์ประเภทเงินได้</div>
-            <div class="income-docs-auto">✓ นายจ้างรายงานข้อมูลเข้าระบบสรรพากรโดยตรง — ไม่ต้องแนบเอกสาร</div>
-          </div>
-          <div class="income-docs-tier">
-            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div>
-            <div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div>
-          </div>
+          <div><div class="income-docs-label blue">📋 พิสูจน์ประเภทเงินได้</div><div class="income-docs-auto">✓ นายจ้างรายงานข้อมูลเข้าระบบสรรพากรโดยตรง</div></div>
+          <div><div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div><div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div></div>
         </div>
       </div>
 
-      <!-- 40(2) -->
       <div class="income-card">
-        <div class="income-card-header">
-          <span class="income-type-badge">40(2)</span>
-          <span class="income-card-name">ค่านายหน้า เบี้ยประชุม ค่าตอบแทน</span>
-        </div>
-        <div class="income-rate">
-          <span class="rate-num">50%</span>
-          <span class="rate-label">แต่ไม่เกิน 100,000 บาท (รวมกับ 40(1))</span>
-        </div>
+        <div class="income-card-header"><span class="income-type-badge">40(2)</span><span class="income-card-name">ค่านายหน้า เบี้ยประชุม ค่าตอบแทน</span></div>
+        <div class="income-rate"><span class="rate-num">50%</span><span class="rate-label">แต่ไม่เกิน 100,000 บาท (รวมกับ 40(1))</span></div>
         <div class="income-examples-list">ค่านายหน้าประกัน · เบี้ยประชุมกรรมการ · ค่าตอบแทนสัญญาจ้างทั่วไป</div>
         <div class="income-docs">
-          <div class="income-docs-tier">
-            <div class="income-docs-label blue">📋 พิสูจน์ประเภทเงินได้</div>
-            <ul>
-              <li>ส่วนใหญ่ผู้จ่ายรายงานหัก ณ ที่จ่ายเข้าระบบแล้ว</li>
-              <li>กรณีตัวแทนประกัน: ใบอนุญาตเป็นตัวแทนประกันชีวิต</li>
-            </ul>
-          </div>
-          <div class="income-docs-tier">
-            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div>
-            <div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div>
-          </div>
+          <div><div class="income-docs-label blue">📋 พิสูจน์ประเภทเงินได้</div><ul><li>ส่วนใหญ่ผู้จ่ายรายงานหัก ณ ที่จ่ายเข้าระบบแล้ว</li><li>กรณีตัวแทนประกัน: ใบอนุญาตเป็นตัวแทนประกันชีวิต</li></ul></div>
+          <div><div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div><div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div></div>
         </div>
       </div>
 
-      <!-- 40(3) -->
       <div class="income-card">
-        <div class="income-card-header">
-          <span class="income-type-badge">40(3)</span>
-          <span class="income-card-name">ค่าลิขสิทธิ์ กู๊ดวิลล์ สิทธิอื่น</span>
-        </div>
-        <div class="income-rate">
-          <span class="rate-num">50%</span>
-          <span class="rate-label">แต่ไม่เกิน 100,000 บาท</span>
-        </div>
+        <div class="income-card-header"><span class="income-type-badge">40(3)</span><span class="income-card-name">ค่าลิขสิทธิ์ กู๊ดวิลล์ สิทธิอื่น</span></div>
+        <div class="income-rate"><span class="rate-num">50%</span><span class="rate-label">แต่ไม่เกิน 100,000 บาท</span></div>
         <div class="income-examples-list">ค่าลิขสิทธิ์หนังสือ เพลง ซอฟต์แวร์ · ค่าแฟรนไชส์ · ค่ากู๊ดวิลล์</div>
         <div class="income-docs">
-          <div class="income-docs-tier">
-            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
-            <ul>
-              <li>หนังสือรับรองความเป็นเจ้าของลิขสิทธิ์</li>
-              <li>สัญญาจ้าง / สัญญา / บันทึกข้อตกลง อันเป็นที่มาของรายได้</li>
-              <li>ตัวอย่างหนังสือหรือวารสารที่แสดงลิขสิทธิ์ของท่าน</li>
-            </ul>
-          </div>
-          <div class="income-docs-tier">
-            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div>
-            <div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div>
-          </div>
+          <div><div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div><ul><li>หนังสือรับรองความเป็นเจ้าของลิขสิทธิ์</li><li>สัญญาจ้าง / สัญญา / บันทึกข้อตกลงอันเป็นที่มาของรายได้</li></ul></div>
+          <div><div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div><div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div></div>
         </div>
       </div>
 
-      <!-- 40(4) -->
       <div class="income-card">
-        <div class="income-card-header">
-          <span class="income-type-badge">40(4)</span>
-          <span class="income-card-name">ดอกเบี้ย เงินปันผล</span>
-        </div>
-        <div class="income-rate">
-          <span class="rate-num">0%</span>
-          <span class="rate-label">ไม่มีค่าใช้จ่าย</span>
-        </div>
+        <div class="income-card-header"><span class="income-type-badge">40(4)</span><span class="income-card-name">ดอกเบี้ย เงินปันผล</span></div>
+        <div class="income-rate"><span class="rate-num">0%</span><span class="rate-label">ไม่มีค่าใช้จ่าย</span></div>
         <div class="income-examples-list">ดอกเบี้ยเงินฝาก · เงินปันผลหุ้น (ในตลาด) · เงินปันผลบริษัทนอกตลาด</div>
         <div class="income-docs">
-          <div class="income-docs-tier">
-            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
-            <ul>
-              <li>ดอกเบี้ย/ปันผลในตลาด: ธนาคาร/บริษัทรายงานหัก ณ ที่จ่ายเข้าระบบแล้ว</li>
-              <li>ปันผลบริษัทนอกตลาด: ตารางสรุปการจ่ายปันผล + บอจ.5 (บัญชีรายชื่อผู้ถือหุ้น) + งบการเงิน + รายงานการประชุม + หลักฐานการรับเงิน (statement / สลิปโอน)</li>
-            </ul>
-          </div>
-          <div class="income-docs-tier">
-            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div>
-            <div class="income-docs-auto">✓ ไม่มีค่าใช้จ่าย (กฎหมายไม่อนุญาตหัก)</div>
-          </div>
+          <div><div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div><ul><li>ดอกเบี้ย/ปันผลในตลาด: ธนาคาร/บริษัทรายงานหัก ณ ที่จ่ายเข้าระบบแล้ว</li><li>ปันผลบริษัทนอกตลาด: ตารางสรุปปันผล + บอจ.5 + งบการเงิน + รายงานประชุม + statement</li></ul></div>
+          <div><div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div><div class="income-docs-auto">✓ ไม่มีค่าใช้จ่าย (กฎหมายไม่อนุญาตหัก)</div></div>
         </div>
       </div>
 
-      <!-- 40(5) -->
       <div class="income-card">
-        <div class="income-card-header">
-          <span class="income-type-badge">40(5)</span>
-          <span class="income-card-name">ค่าเช่าทรัพย์สิน</span>
-        </div>
-        <div class="income-rate">
-          <span class="rate-num">10–30%</span>
-          <span class="rate-label">ตามประเภทสินทรัพย์</span>
-        </div>
-        <div class="income-examples-list">
-          บ้าน/โรงเรือน 30% · ที่ดิน 15% · ยานพาหนะ 30% · เรือ 60% · สัตว์พาหนะ 50% · ทรัพย์สินอื่น 10%
-        </div>
+        <div class="income-card-header"><span class="income-type-badge">40(5)</span><span class="income-card-name">ค่าเช่าทรัพย์สิน</span></div>
+        <div class="income-rate"><span class="rate-num">10–30%</span><span class="rate-label">ตามประเภทสินทรัพย์</span></div>
+        <div class="income-examples-list">บ้าน/โรงเรือน 30% · ที่ดิน 15% · ยานพาหนะ 30% · เรือ 60% · ทรัพย์สินอื่น 10%</div>
         <div class="income-docs">
-          <div class="income-docs-tier">
-            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
-            <ul>
-              <li>สัญญาเช่า</li>
-              <li>เอกสารแสดงกรรมสิทธิ์ทรัพย์สิน เช่น โฉนดที่ดิน (กรณีให้เช่าที่ดิน) หรือสำเนาทะเบียนรถ (กรณีให้เช่ายานพาหนะ)</li>
-            </ul>
-          </div>
-          <div class="income-docs-tier">
-            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย (กรณีหักจริง)</div>
-            <ul>
-              <li>หลักฐานแสดงต้นทุนและค่าใช้จ่ายของทรัพย์สิน</li>
-            </ul>
-          </div>
+          <div><div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div><ul><li>สัญญาเช่า</li><li>เอกสารแสดงกรรมสิทธิ์ทรัพย์สิน (โฉนดที่ดิน / ทะเบียนรถ)</li></ul></div>
+          <div><div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย (กรณีหักจริง)</div><ul><li>หลักฐานแสดงต้นทุนและค่าใช้จ่ายของทรัพย์สิน</li></ul></div>
         </div>
       </div>
 
-      <!-- 40(6) -->
       <div class="income-card">
-        <div class="income-card-header">
-          <span class="income-type-badge">40(6)</span>
-          <span class="income-card-name">วิชาชีพอิสระ</span>
-        </div>
-        <div class="income-rate">
-          <span class="rate-num">30–60%</span>
-          <span class="rate-label">ตามสาขาวิชาชีพ</span>
-        </div>
-        <div class="income-examples-list">
-          แพทย์ 60% · กฎหมาย/วิศวกร/สถาปนิก/บัญชี 30% · โรคศิลปะ (พยาบาล/นักกายภาพ) 30%
-        </div>
+        <div class="income-card-header"><span class="income-type-badge">40(6)</span><span class="income-card-name">วิชาชีพอิสระ</span></div>
+        <div class="income-rate"><span class="rate-num">30–60%</span><span class="rate-label">ตามสาขาวิชาชีพ</span></div>
+        <div class="income-examples-list">แพทย์ 60% · กฎหมาย/วิศวกร/สถาปนิก/บัญชี 30% · โรคศิลปะ 30%</div>
         <div class="income-docs">
-          <div class="income-docs-tier">
-            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
-            <ul>
-              <li>ใบอนุญาตประกอบวิชาชีพ (แพทยสภา / สภาทนายความ / วสท. / สภาวิชาชีพบัญชี / ใบอนุญาตโรคศิลปะ)</li>
-              <li>สัญญาว่าจ้าง + คำอธิบายลักษณะงานที่ทำ</li>
-            </ul>
-          </div>
-          <div class="income-docs-tier">
-            <div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div>
-            <div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div>
-          </div>
+          <div><div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div><ul><li>ใบอนุญาตประกอบวิชาชีพ (แพทยสภา / สภาทนายความ / วสท. / สภาวิชาชีพบัญชี)</li><li>สัญญาว่าจ้าง + คำอธิบายลักษณะงานที่ทำ</li></ul></div>
+          <div><div class="income-docs-label green">🧾 หลักฐานค่าใช้จ่าย</div><div class="income-docs-auto">✓ หักเหมา ไม่ต้องพิสูจน์ค่าใช้จ่ายจริง</div></div>
         </div>
       </div>
 
-      <!-- 40(7) highlight -->
       <div class="income-card highlight">
-        <div class="income-card-header">
-          <span class="income-type-badge">40(7)</span>
-          <span class="income-card-name">รับเหมา (จัดหาสัมภาระเอง)</span>
-        </div>
-        <div class="income-rate">
-          <span class="rate-num">60%</span>
-          <span class="rate-label">ไม่มีเพดาน</span>
-        </div>
-        <div class="income-examples-list">
-          รับเหมาก่อสร้าง · ติดตั้งระบบ CCTV · ผลิตสินค้า — <strong>ต้องจัดหาวัสดุ/สัมภาระในส่วนสำคัญ</strong> ไม่ใช่แค่ค่าแรง
-        </div>
+        <div class="income-card-header"><span class="income-type-badge">40(7)</span><span class="income-card-name">รับเหมา (จัดหาสัมภาระเอง)</span></div>
+        <div class="income-rate"><span class="rate-num">60%</span><span class="rate-label">ไม่มีเพดาน</span></div>
+        <div class="income-examples-list">รับเหมาก่อสร้าง · ติดตั้งระบบ CCTV · ผลิตสินค้า — <strong>ต้องจัดหาวัสดุในส่วนสำคัญ</strong></div>
         <div class="income-docs">
-          <div class="income-docs-tier">
-            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
-            <ul>
-              <li>สัญญาว่าจ้าง / ใบสั่งจ้าง ปิดอากรแสตมป์บริบูรณ์</li>
-              <li>คำอธิบายลักษณะงานที่ทำ</li>
-              <li>หลักฐานการรับเงิน / สำเนา Statement ธนาคาร</li>
-            </ul>
-          </div>
-          <div class="income-docs-tier">
-            <div class="income-docs-label gold">🧾 ต้องพิสูจน์ค่าใช้จ่าย (สำคัญมาก)</div>
-            <ul>
-              <li>ใบเสร็จรับเงินค่าวัสดุก่อสร้าง / ค่าซื้อและติดตั้งระบบ CCTV</li>
-              <li>บัญชีจ่ายค่าแรงลูกจ้าง / ใบสั่งจ้างแรงงาน</li>
-            </ul>
-          </div>
+          <div><div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div><ul><li>สัญญาว่าจ้าง / ใบสั่งจ้าง ปิดอากรแสตมป์บริบูรณ์</li><li>คำอธิบายลักษณะงานที่ทำ + หลักฐานการรับเงิน</li></ul></div>
+          <div><div class="income-docs-label gold">🧾 ต้องพิสูจน์ค่าใช้จ่าย (สำคัญมาก)</div><ul><li>ใบเสร็จรับเงินค่าวัสดุก่อสร้าง / ค่าซื้อและติดตั้งระบบ</li><li>บัญชีจ่ายค่าแรงลูกจ้าง / ใบสั่งจ้างแรงงาน</li></ul></div>
         </div>
-        <div class="income-warn">
-          ⚠️ ถ้าพิสูจน์ไม่ได้ว่า "จัดหาวัสดุในส่วนสำคัญเอง" → สรรพากรปรับเป็น 40(2)
-          หักได้แค่ 100,000 บาท และต้องชำระภาษีส่วนต่างพร้อมเบี้ยปรับ
-        </div>
+        <div class="income-warn">⚠️ ถ้าพิสูจน์ไม่ได้ว่า "จัดหาวัสดุในส่วนสำคัญเอง" → สรรพากรปรับเป็น 40(2) และต้องชำระภาษีส่วนต่างพร้อมเบี้ยปรับ</div>
       </div>
 
-      <!-- 40(8) -->
       <div class="income-card">
-        <div class="income-card-header">
-          <span class="income-type-badge">40(8)</span>
-          <span class="income-card-name">ธุรกิจ พาณิชย์ บริการ อื่นๆ</span>
-        </div>
-        <div class="income-rate">
-          <span class="rate-num">40–85%</span>
-          <span class="rate-label">ตามประเภท หรือหักตามจริง</span>
-        </div>
-        <div class="income-examples-list">
-          ธุรกิจทั่วไป · Freelance · แกร็บแท็กซี่ · ขายสินค้า — ค่าใช้จ่ายสูงหากพิสูจน์ได้
-        </div>
+        <div class="income-card-header"><span class="income-type-badge">40(8)</span><span class="income-card-name">ธุรกิจ พาณิชย์ บริการ อื่นๆ</span></div>
+        <div class="income-rate"><span class="rate-num">40–85%</span><span class="rate-label">ตามประเภท หรือหักตามจริง</span></div>
+        <div class="income-examples-list">ธุรกิจทั่วไป · Freelance · แกร็บแท็กซี่ · ขายสินค้า</div>
         <div class="income-docs">
-          <div class="income-docs-tier">
-            <div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div>
-            <ul>
-              <li>สัญญาจ้าง / ใบสั่งซื้อ / ใบสั่งจ้าง</li>
-              <li>คำอธิบายลักษณะงานที่ก่อให้เกิดรายได้</li>
-              <li>กรณีแกร็บ/แท็กซี่: รายงานอินเซ็นทีฟ (ค่ารอบ) ทั้งปี จาก App</li>
-            </ul>
-          </div>
-          <div class="income-docs-tier">
-            <div class="income-docs-label gold">🧾 ต้องพิสูจน์ค่าใช้จ่าย (ถ้าจะหักตามจริง)</div>
-            <ul>
-              <li>หลักฐานค่าใช้จ่ายในการดำเนินงาน (ใบเสร็จ / ใบกำกับภาษี)</li>
-              <li>บัญชีแสดงรายได้และรายจ่าย</li>
-              <li>Statement บัญชีธนาคาร — หลักฐานการรับเงิน</li>
-            </ul>
-          </div>
+          <div><div class="income-docs-label blue">📋 ต้องพิสูจน์ประเภทเงินได้</div><ul><li>สัญญาจ้าง / ใบสั่งซื้อ / คำอธิบายลักษณะงาน</li><li>กรณีแกร็บ/แท็กซี่: รายงานอินเซ็นทีฟ (ค่ารอบ) ทั้งปีจาก App</li></ul></div>
+          <div><div class="income-docs-label gold">🧾 ต้องพิสูจน์ค่าใช้จ่าย (ถ้าจะหักตามจริง)</div><ul><li>ใบเสร็จ / ใบกำกับภาษีค่าใช้จ่ายในการดำเนินงาน</li><li>Statement บัญชีธนาคาร — หลักฐานการรับเงิน</li></ul></div>
         </div>
-        <div class="income-warn">
-          ถ้าไม่มีเอกสารค่าใช้จ่าย → ต้องปรับเป็น 40(2) หักเหมา 100,000 บาท
-          และชำระภาษีส่วนต่างเพิ่ม
-        </div>
+        <div class="income-warn">ถ้าไม่มีเอกสารค่าใช้จ่าย → ต้องปรับเป็น 40(2) หักเหมา 100,000 บาท และชำระภาษีส่วนต่างเพิ่ม</div>
       </div>
+    </div>
 
-    </div><!-- /income-grid -->
-
-    <p style="margin-top:2.5rem; text-align:center; font-size:0.875rem; color:var(--muted); max-width:600px; margin-left:auto; margin-right:auto; line-height:1.75;">
+    <p style="margin-top:2.5rem;text-align:center;font-size:0.875rem;color:var(--muted);max-width:600px;margin-left:auto;margin-right:auto;line-height:1.75;">
       ไม่แน่ใจว่าเงินได้ตัวเองอยู่ประเภทไหน หรือกังวลว่ายื่นถูกต้องหรือเปล่า?<br>
-      <a href="#contact" style="color:var(--blue); font-weight:600;">ปรึกษาเราได้ฟรี — ไม่มีค่าใช้จ่าย</a>
+      <a href="#contact" style="color:var(--blue);font-weight:600;">ปรึกษาเราได้ฟรี — ไม่มีค่าใช้จ่าย</a>
     </p>
-
   </div>
 </section>
 
-<!-- EXPERT -->
+<!-- ═══════════════════════════════════════ -->
+<!-- SERVICES — บริการ (ท้ายสุด)           -->
+<!-- ═══════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <span class="tag">บริการ</span>
+    <h2 class="section-title">อ่านแล้วยังติดปัญหา?<br>เราช่วยได้ทุกเคส — ฟรี</h2>
+    <p class="section-sub">บริการให้คำปรึกษาและตัวแทนติดต่อสรรพากร ไม่มีค่าใช้จ่าย</p>
+
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon">💰</div><span class="badge-free">ฟรี</span></div>
+        <h3>ปรึกษาขอคืนภาษีเงินได้บุคคลธรรมดา</h3>
+        <p>วิเคราะห์สถานการณ์และแนะนำแนวทางการขอคืนภาษี ภ.ง.ด.90 และ ภ.ง.ด.91</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon">🔍</div><span class="badge-free">ฟรี</span></div>
+        <h3>ตรวจสอบสถานะการขอคืนภาษี</h3>
+        <p>ติดตามว่าเรื่องอยู่ขั้นตอนไหน รออยู่ที่ใคร มีปัญหาติดขัดอะไรหรือไม่</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon">📋</div><span class="badge-free">ฟรี</span></div>
+        <h3>วิธีได้รับเงินคืนให้ถูกต้องรวดเร็ว</h3>
+        <p>แนะนำขั้นตอนที่ถูกต้องตั้งแต่ต้นจนจบ ไม่ให้เรื่องค้างหรือถูกปฏิเสธ</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon">🧮</div><span class="badge-free">ฟรี</span></div>
+        <h3>ตรวจสอบสิทธิลดหย่อนภาษีที่ใช้ได้</h3>
+        <p>เช็คสิทธิลดหย่อนที่คุณมี เช่น ประกันชีวิต กองทุน LTF/RMF บุตร บิดามารดา</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon">📁</div><span class="badge-free">ฟรี</span></div>
+        <h3>เอกสารที่ต้องใช้ในการขอคืนภาษี</h3>
+        <p>แจ้งรายการเอกสารที่ต้องจัดเตรียม ไม่ต้องเดาหรือเดินทางไปสรรพากรหลายรอบ</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon">⏱️</div><span class="badge-free">ฟรี</span></div>
+        <h3>ระยะเวลาและติดตามเงินคืนภาษี</h3>
+        <p>สอบถามว่าเงินจะมาเมื่อไร และแก้ไขกรณีที่รอนานผิดปกติ</p>
+      </div>
+      <div class="svc-card soon">
+        <div class="svc-top"><div class="svc-icon gold">📒</div><span class="badge-soon">เร็วๆ นี้</span></div>
+        <h3>รับทำบัญชีบุคคลธรรมดาและนิติบุคคล</h3>
+        <p>บริการจัดทำบัญชี งบการเงิน และรายงานทางบัญชีสำหรับบุคคลและธุรกิจ</p>
+      </div>
+      <div class="svc-card soon">
+        <div class="svc-top"><div class="svc-icon green">📊</div><span class="badge-soon">เร็วๆ นี้</span></div>
+        <h3>วางแผนและยื่นภาษีนิติบุคคล</h3>
+        <p>ให้คำปรึกษาด้านการวางแผนภาษี และยื่นแบบภาษีสำหรับนิติบุคคลอย่างถูกต้อง</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- EXPERT — ทีมงาน                        -->
+<!-- ═══════════════════════════════════════ -->
 <section id="expert">
   <div class="container">
     <span class="tag">ทีมงาน</span>
@@ -1597,24 +1329,15 @@
     <p class="section-sub">เราผ่านประสบการณ์เรื่องภาษีมาด้วยตัวเอง ได้รับคำแนะนำจากสรรพากรโดยตรง และอยากส่งต่อความรู้นั้นให้ทุกคน</p>
 
     <div class="expert-grid">
-
       <div class="expert-card">
         <div class="expert-avatar">👩‍💼</div>
         <div class="expert-name">อภิญญา คำสุนทร</div>
         <div class="expert-title">ผู้ก่อตั้ง · ตัวแทนช่วยติดต่อสรรพากร</div>
         <div class="expert-badges">
-          <div class="exp-badge">
-            <span>📖</span> ผ่านประสบการณ์ภาษีมาด้วยตัวเอง
-          </div>
-          <div class="exp-badge">
-            <span>💬</span> ได้รับคำแนะนำจากสรรพากรโดยตรง
-          </div>
-          <div class="exp-badge">
-            <span>🤝</span> ตัวแทนช่วยติดต่อและติดตามเรื่อง
-          </div>
-          <div class="exp-badge">
-            <span>🆓</span> บริการฟรีทุกเคส (ปัจจุบัน)
-          </div>
+          <div class="exp-badge"><span>📖</span> ผ่านประสบการณ์ภาษีมาด้วยตัวเอง</div>
+          <div class="exp-badge"><span>💬</span> ได้รับคำแนะนำจากสรรพากรโดยตรง</div>
+          <div class="exp-badge"><span>🤝</span> ตัวแทนช่วยติดต่อและติดตามเรื่อง</div>
+          <div class="exp-badge"><span>🆓</span> บริการฟรีทุกเคส (ปัจจุบัน)</div>
         </div>
       </div>
 
@@ -1630,7 +1353,7 @@
           <div class="point-icon">💡</div>
           <div class="point-text">
             <h4>ผ่านประสบการณ์จริง ได้คำแนะนำจากสรรพากร</h4>
-            <p>เราเคยประสบปัญหาเดียวกับคุณ และได้รับคำแนะนำจากเจ้าหน้าที่สรรพากรมาโดยตรง จึงรู้ว่าต้องทำอะไรบ้าง</p>
+            <p>เคยประสบปัญหาเดียวกับคุณ และได้รับคำแนะนำจากเจ้าหน้าที่สรรพากรมาโดยตรง</p>
           </div>
         </div>
         <div class="about-point">
@@ -1648,13 +1371,14 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- HOW -->
-<section id="how">
+<!-- ═══════════════════════════════════════ -->
+<!-- HOW — ขั้นตอน                          -->
+<!-- ═══════════════════════════════════════ -->
+<section id="how" style="background:var(--bg);">
   <div class="container">
     <span class="tag">ขั้นตอน</span>
     <h2 class="section-title">เริ่มต้นง่ายๆ 4 ขั้นตอน</h2>
@@ -1685,7 +1409,9 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ═══════════════════════════════════════ -->
+<!-- CONTACT                                -->
+<!-- ═══════════════════════════════════════ -->
 <section id="contact">
   <div class="container">
     <span class="tag">ติดต่อ</span>
@@ -1716,6 +1442,25 @@
 <footer>
   <p><strong>Apinya Advisory</strong> · ที่ปรึกษาภาษีและบัญชี · © 2026 · บริการฟรีทุกเคส</p>
 </footer>
+
+<script>
+function shareWebsite() {
+  const shareData = {
+    title: 'ทำไมคืนภาษีช้า? อ่านอธิบายได้ที่นี่',
+    text: 'เพื่อนได้คืนภาษีแล้ว ทำไมเรายังไม่ได้? อ่านเหตุผลจากกระบวนการจริงของสรรพากร',
+    url: window.location.href
+  };
+  if (navigator.share) {
+    navigator.share(shareData).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert('คัดลอก URL แล้ว — นำไปแชร์ในกลุ่ม Facebook ได้เลย!');
+    }).catch(() => {
+      prompt('คัดลอก URL นี้:', window.location.href);
+    });
+  }
+}
+</script>
 
 </body>
 </html>
