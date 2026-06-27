@@ -453,6 +453,94 @@
 
     footer strong { color: rgba(255,255,255,0.6); font-weight: 500; }
 
+    /* ── DOCS ── */
+    #docs { background: var(--bg); }
+
+    .doc-alert {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: #fffbeb; border: 1px solid #fcd34d;
+      border-left: 4px solid #d97706;
+      border-radius: 10px; padding: 18px 22px;
+      margin: 2rem 0 3rem;
+    }
+
+    .alert-icon { font-size: 1.4rem; flex-shrink: 0; line-height: 1; }
+    .doc-alert strong { display: block; font-size: 0.95rem; color: #78350f; margin-bottom: 0.35rem; }
+    .doc-alert p { font-size: 0.875rem; color: #92400e; line-height: 1.75; }
+
+    .doc-group { margin-bottom: 3rem; }
+
+    .doc-group-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.9rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 1rem;
+    }
+
+    .doc-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px;
+      transition: box-shadow 0.2s;
+    }
+
+    .doc-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+    .doc-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .doc-name { font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+
+    .badge-notify {
+      background: #fff7ed; color: #c2410c;
+      border: 1px solid #fed7aa;
+      font-size: 0.68rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 100px;
+      white-space: nowrap; flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-attach {
+      background: #f0fdf4; color: #15803d;
+      border: 1px solid #bbf7d0;
+      font-size: 0.68rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 100px;
+      white-space: nowrap; flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .doc-list {
+      list-style: none; padding: 0;
+      display: flex; flex-direction: column; gap: 0.45rem;
+    }
+
+    .doc-list li {
+      font-size: 0.845rem; color: var(--muted); line-height: 1.65;
+      padding-left: 1.2rem; position: relative;
+    }
+
+    .doc-list li::before {
+      content: '›'; position: absolute; left: 0;
+      color: var(--blue); font-weight: 700; font-size: 1rem; line-height: 1.4;
+    }
+
+    .doc-list li strong { color: var(--text); }
+
+    .doc-note {
+      margin-top: 0.65rem; padding: 8px 10px;
+      background: #fffbeb; border-radius: 6px;
+      font-size: 0.8rem; color: #92400e; line-height: 1.55;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .expert-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -481,6 +569,7 @@
     <li><a href="#services">บริการ</a></li>
     <li><a href="#expert">ทีมงาน</a></li>
     <li><a href="#how">ขั้นตอน</a></li>
+    <li><a href="#docs">เอกสารลดหย่อน</a></li>
     <li><a href="#contact" class="nav-cta">ติดต่อเลย</a></li>
   </ul>
 </nav>
@@ -613,6 +702,303 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- DOCS -->
+<section id="docs">
+  <div class="container">
+    <span class="tag">เตรียมเอกสาร</span>
+    <h2 class="section-title">ใช้สิทธิลดหย่อนอะไร ต้องแนบเอกสารอะไร?</h2>
+    <p class="section-sub">เตรียมให้ครบตั้งแต่แรก ยื่นครั้งเดียว ไม่ต้องรอเจ้าหน้าที่ขอเพิ่ม</p>
+
+    <div class="doc-alert">
+      <span class="alert-icon">⚠️</span>
+      <div>
+        <strong>สำคัญ: หลายรายการต้องให้บริษัทส่งข้อมูลเข้าระบบสรรพากรก่อน จึงจะใช้สิทธิ์ได้</strong>
+        <p>ประกันชีวิต, ประกันสุขภาพ, RMF, SSF, Thai ESG, ดอกเบี้ยบ้าน — ต้องแจ้งให้บริษัทประกัน / บลจ. / สถาบันการเงิน ส่งข้อมูลให้กรมสรรพากรก่อน ไม่ใช่แค่แนบเอกสาร หากไม่ทำ สรรพากรจะไม่ให้สิทธิ์แม้จะจ่ายจริง</p>
+      </div>
+    </div>
+
+    <!-- กลุ่ม: ประกัน -->
+    <div class="doc-group">
+      <div class="doc-group-label">🛡️ ประกัน</div>
+      <div class="doc-grid">
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ประกันชีวิต</span>
+            <span class="badge-notify">⚠️ ต้องแจ้งบริษัทก่อน</span>
+          </div>
+          <ul class="doc-list">
+            <li><strong>กรมธรรม์ตั้งแต่ปี 2563 เป็นต้นไป:</strong> แจ้งบริษัทประกันชีวิตให้ส่งข้อมูลให้กรมสรรพากร (ไม่ต้องแนบใบเสร็จ)</li>
+            <li><strong>กรมธรรม์ก่อนปี 2563:</strong> ใบเสร็จรับเงิน หรือหนังสือรับรองการชำระเบี้ยประกันชีวิต (ระยะ 10 ปีขึ้นไป)</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ประกันชีวิตแบบบำนาญ</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>ใบเสร็จรับเงิน หรือหนังสือรับรองการชำระเบี้ยประกันแบบบำนาญ</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ประกันสุขภาพ (ตัวเอง)</span>
+            <span class="badge-notify">⚠️ ต้องแจ้งบริษัทก่อน</span>
+          </div>
+          <ul class="doc-list">
+            <li>แจ้งบริษัทประกันสุขภาพให้ส่งข้อมูลให้กรมสรรพากร</li>
+          </ul>
+          <div class="doc-note">หากบริษัทประกันยังไม่ได้ส่งข้อมูล สรรพากรจะไม่รับสิทธิ์ แม้จ่ายจริง</div>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ประกันสุขภาพ บิดา-มารดา</span>
+            <span class="badge-notify">⚠️ ต้องแจ้งบริษัทก่อน</span>
+          </div>
+          <ul class="doc-list">
+            <li>แจ้งบริษัทประกันสุขภาพให้ส่งข้อมูลให้กรมสรรพากร</li>
+            <li>หรือแนบใบเสร็จรับเงินหรือหนังสือรับรองการชำระเบี้ย (ระบุชื่อผู้เอาประกัน)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- กลุ่ม: กองทุน -->
+    <div class="doc-group">
+      <div class="doc-group-label">📈 กองทุน</div>
+      <div class="doc-grid">
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">กองทุนสำรองเลี้ยงชีพ (PVD)</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>ใบรับรองหรือใบแจ้งยอดเงินของสมาชิกกองทุนสำรองเลี้ยงชีพ (จากนายจ้าง)</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">RMF</span>
+            <span class="badge-notify">⚠️ ต้องแจ้ง บลจ. ก่อน</span>
+          </div>
+          <ul class="doc-list">
+            <li>แจ้งบริษัทหลักทรัพย์จัดการกองทุน (บลจ.) ให้ส่งข้อมูลให้กรมสรรพากร</li>
+          </ul>
+          <div class="doc-note">ถ้า บลจ. ยังไม่ส่งข้อมูล สิทธิ์ลดหย่อนจะถูกปฏิเสธ</div>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">SSF (กองทุนรวมเพื่อการออม)</span>
+            <span class="badge-notify">⚠️ ต้องแจ้ง บลจ. ก่อน</span>
+          </div>
+          <ul class="doc-list">
+            <li>แจ้งบริษัทหลักทรัพย์จัดการกองทุน (บลจ.) ให้ส่งข้อมูลให้กรมสรรพากร</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">Thai ESG / Thai ESG X</span>
+            <span class="badge-notify">⚠️ ต้องแจ้ง บลจ. ก่อน</span>
+          </div>
+          <ul class="doc-list">
+            <li>แจ้งบริษัทหลักทรัพย์จัดการกองทุน (บลจ.) ให้ส่งข้อมูลให้กรมสรรพากร</li>
+            <li>รวมถึงกรณี <strong>สับเปลี่ยนจาก LTF เป็น Thai ESG X</strong> ต้องแจ้ง บลจ. เช่นกัน</li>
+          </ul>
+          <div class="doc-note">ไม่มีทางอื่น — ต้องแจ้ง บลจ. เท่านั้น ไม่มีเอกสารแนบแทนได้</div>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">LTF (กองทุนรวมหุ้นระยะยาว)</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>หนังสือรับรองการซื้อหน่วยลงทุน LTF (จาก บลจ.)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- กลุ่ม: ครอบครัว -->
+    <div class="doc-group">
+      <div class="doc-group-label">👨‍👩‍👧‍👦 ครอบครัว</div>
+      <div class="doc-grid">
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">บุตร</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>สูติบัตรบุตร</li>
+            <li>หนังสือรับรองบุตร</li>
+            <li><strong>ผู้ชาย:</strong> ต้องแนบทะเบียนสมรสด้วย เพื่อยืนยันว่าเป็นบุตรชอบด้วยกฎหมาย</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">บิดา-มารดา</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>หนังสือรับรองการหักลดหย่อนค่าอุปการะเลี้ยงดูบิดามารดา <strong>(แบบ ลย.03)</strong></li>
+          </ul>
+          <div class="doc-note">แบบ ลย.03 ขอได้จากบิดา-มารดา หรือดาวน์โหลดจากเว็บกรมสรรพากร</div>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ค่าฝากครรภ์ / คลอดบุตร</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>หลักฐานการชำระค่าฝากครรภ์และค่าคลอดบุตร (ใบเสร็จรับเงิน)</li>
+            <li>ใบรับรองแพทย์</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">คนพิการ / ทุพพลภาพ</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>หนังสือรับรองการหักลดหย่อน <strong>(แบบ ล.ย.04)</strong></li>
+            <li>สำเนาบัตรประจำตัวคนพิการ ด้านหน้าและด้านหลัง</li>
+            <li>หนังสือรับรองการเป็นผู้อุปการะ <strong>(ล.ย.04-1)</strong> + ใบรับรองแพทย์ (กรณีทุพพลภาพ)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- กลุ่ม: บ้าน / อสังหา -->
+    <div class="doc-group">
+      <div class="doc-group-label">🏠 บ้านและอสังหาริมทรัพย์</div>
+      <div class="doc-grid">
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ดอกเบี้ยเงินกู้ซื้อบ้าน</span>
+            <span class="badge-notify">⚠️ ต้องแจ้งธนาคารก่อน</span>
+          </div>
+          <ul class="doc-list">
+            <li><strong>สัญญาตั้งแต่ปี 2564 เป็นต้นไป:</strong> แจ้งสถาบันการเงินให้ส่งข้อมูลให้กรมสรรพากร</li>
+            <li><strong>สัญญาก่อนปี 2564:</strong> หนังสือรับรองดอกเบี้ยเงินกู้ยืมเพื่อซื้อ/เช่าซื้อ/สร้างอาคาร</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ซื้ออสังหาริมทรัพย์</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>หนังสือรับรองจำนวนเงินที่ชำระค่าซื้ออสังหาริมทรัพย์</li>
+            <li>สำเนาหนังสือสัญญาซื้อ-ขาย</li>
+            <li>สำเนาภาพถ่ายโฉนดที่ดิน ด้านหน้าและด้านหลัง</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ค่าเช่า / รายได้จากการให้เช่า</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>หนังสือสัญญาเช่า พร้อมติดอากรแสตมป์ตามกฎหมาย</li>
+            <li>เอกสารแสดงกรรมสิทธิ์ (โฉนดที่ดิน)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- กลุ่ม: อื่นๆ -->
+    <div class="doc-group">
+      <div class="doc-group-label">📋 อื่นๆ</div>
+      <div class="doc-grid">
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ประกันสังคม</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>ใบรับรองยอดเงินสะสมที่สมาชิกส่งเข้าประกันสังคม (ขอได้จากสำนักงานประกันสังคม)</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">เงินบริจาค 1 เท่า (วัด / มูลนิธิ)</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>ใบเสร็จรับเงินของมูลนิธิหรือสมาคม</li>
+            <li>หรือใบอนุโมทนาบัตรของวัดหรืออาราม</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">เงินบริจาค 2 เท่า (สถานศึกษา)</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>ใบเสร็จรับเงินบริจาคให้สถานศึกษา / กรมพินิจและคุ้มครองเด็กและเยาวชน / อบต. / อบจ. / กองทุนพัฒนาครู</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ท่องเที่ยวในประเทศ</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>ใบกำกับภาษีค่าท่องเที่ยว</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">Easy E-Receipt</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>ใบกำกับภาษีซื้อสินค้าอุปโภคบริโภค (e-Tax Invoice)</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-top">
+            <span class="doc-name">ออกจากงาน / สิ้นสุดสัญญาจ้าง</span>
+            <span class="badge-attach">📎 แนบเอกสาร</span>
+          </div>
+          <ul class="doc-list">
+            <li>เอกสารแจ้งเหตุออกจากงาน</li>
+            <li>หลักฐานระยะเวลาการทำงาน</li>
+            <li>หนังสือรับรองเงินเดือน 12 เดือนสุดท้าย</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
