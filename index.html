@@ -453,6 +453,105 @@
 
     footer strong { color: rgba(255,255,255,0.6); font-weight: 500; }
 
+    /* ── WHY SLOW ── */
+    #why { background: white; }
+
+    .why-intro {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border: 1px solid #bae6fd;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin: 2rem 0 3rem;
+    }
+
+    .why-intro p {
+      font-size: 0.97rem; color: #0c4a6e; line-height: 1.85;
+    }
+
+    .why-intro strong { color: #075985; }
+
+    .why-compare {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin-bottom: 3rem;
+    }
+
+    .why-card {
+      border-radius: 14px; padding: 28px;
+    }
+
+    .why-card.fast {
+      background: #f0fdf4; border: 1.5px solid #86efac;
+    }
+
+    .why-card.slow {
+      background: #fff7ed; border: 1.5px solid #fcd34d;
+    }
+
+    .why-card-title {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1rem; font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .why-card.fast .why-card-title { color: #15803d; }
+    .why-card.slow .why-card-title { color: #92400e; }
+
+    .why-card-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+
+    .why-card.fast .why-card-icon { background: #dcfce7; }
+    .why-card.slow .why-card-icon { background: #fef3c7; }
+
+    .why-list {
+      list-style: none; padding: 0;
+      display: flex; flex-direction: column; gap: 0.65rem;
+    }
+
+    .why-list li {
+      font-size: 0.875rem; line-height: 1.7;
+      padding-left: 1.25rem; position: relative;
+    }
+
+    .why-card.fast .why-list li { color: #166534; }
+    .why-card.fast .why-list li::before { content: '✓'; position: absolute; left: 0; font-weight: 700; color: #16a34a; }
+    .why-card.slow .why-list li { color: #78350f; }
+    .why-card.slow .why-list li::before { content: '!'; position: absolute; left: 0; font-weight: 700; color: #d97706; }
+
+    .why-mechanism {
+      background: var(--bg); border-radius: 14px;
+      padding: 28px 32px;
+    }
+
+    .why-mechanism h3 {
+      font-size: 1rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 1.25rem;
+    }
+
+    .mechanism-steps {
+      display: flex; flex-direction: column; gap: 0.85rem;
+    }
+
+    .mstep {
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+
+    .mstep-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--blue); color: white;
+      font-size: 0.8rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+
+    .mstep-text {
+      font-size: 0.88rem; color: var(--muted); line-height: 1.7;
+    }
+
+    .mstep-text strong { color: var(--text); }
+
     /* ── DOCS ── */
     #docs { background: var(--bg); }
 
@@ -569,6 +668,7 @@
     <li><a href="#services">บริการ</a></li>
     <li><a href="#expert">ทีมงาน</a></li>
     <li><a href="#how">ขั้นตอน</a></li>
+    <li><a href="#why">ทำไมได้คืนช้า</a></li>
     <li><a href="#docs">เอกสารลดหย่อน</a></li>
     <li><a href="#contact" class="nav-cta">ติดต่อเลย</a></li>
   </ul>
@@ -705,6 +805,76 @@
   </div>
 </section>
 
+<!-- WHY SLOW -->
+<section id="why">
+  <div class="container">
+    <span class="tag">ทำความเข้าใจ</span>
+    <h2 class="section-title">ทำไมบางคนได้คืนภาษีเร็ว บางคนช้า?</h2>
+    <p class="section-sub">คำถามที่ผู้เสียภาษีโทรมาถามมากที่สุด — นี่คือคำตอบจากคนที่ดูแลระบบคืนภาษีโดยตรง</p>
+
+    <div class="why-intro">
+      <p>
+        เมื่อคุณยื่นแบบ ภ.ง.ด.90/91 ผ่านระบบออนไลน์ <strong>กรมสรรพากรมีข้อมูลบางส่วนอยู่แล้ว</strong>
+        เช่น รายได้จากนายจ้าง เงินปันผล ดอกเบี้ยจากธนาคาร ที่ถูกส่งเข้ามาในระบบล่วงหน้า<br><br>
+        หากตัวเลขที่คุณกรอก <strong>ตรงกับข้อมูลในระบบของสรรพากร</strong> → ระบบอนุมัติอัตโนมัติ ได้คืนภายใน 3 วัน<br>
+        หากตัวเลข <strong>ไม่ตรง หรือมีรายการที่สรรพากรยังไม่มีข้อมูล</strong> → ระบบจะ flag ไว้ให้เจ้าหน้าที่ตรวจสอบก่อน
+      </p>
+    </div>
+
+    <div class="why-compare">
+      <div class="why-card fast">
+        <div class="why-card-title">
+          <div class="why-card-icon">⚡</div>
+          ได้คืนภายใน 3 วัน
+        </div>
+        <ul class="why-list">
+          <li>ข้อมูลรายได้ที่กรอกตรงกับที่สรรพากรได้รับจากนายจ้าง</li>
+          <li>รายการลดหย่อนทุกรายการมีข้อมูลในระบบสรรพากรแล้ว (บริษัทประกัน/บลจ. ส่งมาแล้ว)</li>
+          <li>ไม่มีรายการที่น่าสงสัยหรือผิดปกติ</li>
+          <li>ยื่นแบบถูกต้องครบถ้วนตั้งแต่แรก</li>
+        </ul>
+      </div>
+
+      <div class="why-card slow">
+        <div class="why-card-title">
+          <div class="why-card-icon">⏳</div>
+          รอนานกว่า 3 วัน
+        </div>
+        <ul class="why-list">
+          <li>ตัวเลขรายได้ที่กรอกไม่ตรงกับข้อมูลที่สรรพากรมี</li>
+          <li>ใช้สิทธิลดหย่อนที่บริษัทประกัน/บลจ. ยังไม่ได้ส่งข้อมูลให้สรรพากร</li>
+          <li>ไม่ได้แนบเอกสารประกอบในรายการที่จำเป็น</li>
+          <li>มีรายการลดหย่อนที่สรรพากรต้องตรวจสอบก่อน เช่น บุตร บิดามารดา คนพิการ</li>
+          <li>ยื่นแบบผิดพลาด ตัวเลขคลาดเคลื่อน ต้องยื่นแก้ไข</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="why-mechanism">
+      <h3>⚙️ กระบวนการตรวจสอบของสรรพากร เมื่อข้อมูลไม่ตรง</h3>
+      <div class="mechanism-steps">
+        <div class="mstep">
+          <div class="mstep-num">1</div>
+          <div class="mstep-text">ระบบตรวจพบว่าข้อมูลที่ยื่น <strong>ไม่ตรงกับข้อมูลในฐานข้อมูลสรรพากร</strong> → ระบบ flag รายการนั้นไว้</div>
+        </div>
+        <div class="mstep">
+          <div class="mstep-num">2</div>
+          <div class="mstep-text">เจ้าหน้าที่สรรพากรต้องตรวจสอบรายการนั้นด้วยตัวเอง — <strong>แต่มีเจ้าหน้าที่น้อย ผู้ยื่นแบบมีหลักล้านราย</strong> จึงใช้เวลา</div>
+        </div>
+        <div class="mstep">
+          <div class="mstep-num">3</div>
+          <div class="mstep-text">เจ้าหน้าที่อาจส่งหนังสือ <strong>ขอเอกสารเพิ่มเติม</strong> — ถ้าไม่ตอบหรือส่งเอกสารไม่ครบ การคืนภาษีจะยิ่งล่าช้า</div>
+        </div>
+        <div class="mstep">
+          <div class="mstep-num">4</div>
+          <div class="mstep-text">เมื่อตรวจสอบเสร็จและข้อมูลถูกต้อง → <strong>จึงอนุมัติคืนภาษี</strong> ซึ่งอาจใช้เวลาหลักสัปดาห์ถึงหลักเดือน</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- DOCS -->
 <section id="docs">
   <div class="container">
@@ -713,10 +883,16 @@
     <p class="section-sub">เตรียมให้ครบตั้งแต่แรก ยื่นครั้งเดียว ไม่ต้องรอเจ้าหน้าที่ขอเพิ่ม</p>
 
     <div class="doc-alert">
-      <span class="alert-icon">⚠️</span>
+      <span class="alert-icon">💡</span>
       <div>
-        <strong>สำคัญ: หลายรายการต้องให้บริษัทส่งข้อมูลเข้าระบบสรรพากรก่อน จึงจะใช้สิทธิ์ได้</strong>
-        <p>ประกันชีวิต, ประกันสุขภาพ, RMF, SSF, Thai ESG, ดอกเบี้ยบ้าน — ต้องแจ้งให้บริษัทประกัน / บลจ. / สถาบันการเงิน ส่งข้อมูลให้กรมสรรพากรก่อน ไม่ใช่แค่แนบเอกสาร หากไม่ทำ สรรพากรจะไม่ให้สิทธิ์แม้จะจ่ายจริง</p>
+        <strong>เมื่อไรถึงต้องแนบเอกสาร?</strong>
+        <p>
+          ตอนยื่นแบบ สรรพากรจะแสดงข้อมูลที่มีอยู่แล้วในระบบให้คุณเห็น
+          <strong>ถ้าตัวเลขที่คุณกรอกตรงกับข้อมูลในระบบ → ไม่ต้องแนบเอกสาร</strong>
+          แต่ถ้าไม่ตรง หรือมีรายการที่สรรพากรยังไม่มีข้อมูล → ต้องแนบเอกสารประกอบ<br><br>
+          ⚠️ <strong>รายการที่ต้องให้บริษัทส่งข้อมูลก่อน</strong> ได้แก่ ประกันชีวิต, ประกันสุขภาพ, RMF, SSF, Thai ESG, ดอกเบี้ยบ้าน
+          — ถ้าบริษัทยังไม่ส่ง สรรพากรจะไม่มีข้อมูล และจะไม่ให้สิทธิ์ แม้คุณจะจ่ายจริง
+        </p>
       </div>
     </div>
 
